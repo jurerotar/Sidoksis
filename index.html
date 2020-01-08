@@ -1,0 +1,103 @@
+<!doctype HTML>
+<htmL lang="sl">
+    <head>
+        <title>DocSis</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="">
+        <!-- Preload the json file(s) here for faster page usability-->
+        <link rel = "preload" as = "script" href = "assets/scripts/main.js">
+        <!--Start fav icons (Switch icons with correct ones)-->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
+        <link rel="manifest" href="assets/img/fav/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <!--End fav icons-->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+    <body class = "body">
+        <div class = "loader" role="presentation">
+            <div class="lds-ring" role="presentation">
+                <div role="presentation"></div>
+                <div role="presentation"></div>
+                <div role="presentation"></div>
+                <div role="presentation"></div>
+            </div>
+            <p class = "loader__text">Pridobivam podatke</p>
+        </div>
+        <div class = "widescreenSmallContainer">
+            <nav class = "navigation">
+                <div class = "navigation__sectionContainer">
+                    <p class = "title__companyTitle"></p>
+                </div>
+                <div class = "navigation__userContainer">
+                    <div class = "navigation__imageContainer">
+                    </div>
+                    <div class = "navigation__userAndTitleContainer">
+                        <p class = "title__username"></p>
+                        <p class = "title__userTitle"></p>
+                    </div>
+                </div>
+            </nav>
+            <main class = "main">
+
+            </main>
+            <div class = "popup" role="complementary" data-open = "closed">
+                <div class = "popup__rel">
+                    <div class = "popup__header" role="text">
+                        <div class = "popup__close">
+                            <svg version="1.1" class = "popup__close--icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="414.298px" height="414.299px" viewBox="0 0 414.298 414.299" style="enable-background:new 0 0 414.298 414.299;" xml:space="preserve"><path d="M3.663,410.637c2.441,2.44,5.64,3.661,8.839,3.661c3.199,0,6.398-1.221,8.839-3.661l185.809-185.81l185.81,185.811 c2.44,2.44,5.641,3.661,8.84,3.661c3.198,0,6.397-1.221,8.839-3.661c4.881-4.881,4.881-12.796,0-17.679l-185.811-185.81 l185.811-185.81c4.881-4.882,4.881-12.796,0-17.678c-4.882-4.882-12.796-4.882-17.679,0l-185.81,185.81L21.34,3.663 c-4.882-4.882-12.796-4.882-17.678,0c-4.882,4.881-4.882,12.796,0,17.678l185.81,185.809L3.663,392.959 C-1.219,397.841-1.219,405.756,3.663,410.637z"/></svg>
+                        </div>
+                        <p class = "title__subtitle" id = "popup-subtitle">
+                        </p>
+                        <p class = "popup__title" id = "popup-title">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer class = "footer">
+                <details class = "footer__details">
+                    <summary class = "footer__summary">
+                        Pogosta vprašanja
+                        <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" ><path fill="currentColor" d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
+                    </summary>
+                    <p class = "footer__text">
+                        <span class = "footer__question">Zakaj zakaj zakaj?</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum voluptatibus natus tenetur doloribus assumenda perferendis? Repellat voluptatibus beatae voluptate explicabo similique, ratione illo quas, animi maiores illum recusandae asperiores.
+                    </p>
+                    <p class = "footer__text">
+                        <span class = "footer__question">Zakaj zakaj zakaj?</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum voluptatibus natus tenetur doloribus assumenda perferendis? Repellat voluptatibus beatae voluptate explicabo similique, ratione illo quas, animi maiores illum recusandae asperiores.
+                    </p>
+                </details>
+                <details class = "footer__details">
+                    <summary class = "footer__summary">
+                        Prijavi napako
+                        <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" ><path fill="currentColor" d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
+                    </summary>
+                    <p class = "footer__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum voluptatibus natus tenetur doloribus assumenda perferendis? Repellat voluptatibus beatae voluptate explicabo similique, ratione illo quas, animi maiores illum recusandae asperiores.
+                    </p>
+                </details>
+                <details class = "footer__details footer__details--noBorder">
+                    <summary class = "footer__summary">
+                        Kontaktiraj podporo
+                        <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" ><path fill="currentColor" d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
+                    </summary>
+                    <p class = "footer__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum voluptatibus natus tenetur doloribus assumenda perferendis? Repellat voluptatibus beatae voluptate explicabo similique, ratione illo quas, animi maiores illum recusandae asperiores.
+                    </p>
+                </details>
+            </footer>
+            <div class = "footer__copyright">
+                <p class = "title__copyright">
+                    Vse pravice pridržane © Sidoksis d.o.o.
+                </p>
+                <p class = "title__version">
+                    v0.1
+                </p>
+            </div>
+        </div>
+        <script src = "assets/scripts/main.js"></script>
+    </body>
+</htmL>
