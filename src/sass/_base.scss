@@ -42,6 +42,8 @@ Locally hosted fonts
     --color-blue-1: #53C5F2;
 
     --color-purple-1: #800080;
+    --color-purple-2: #3F4768;
+    --color-purple-3: #6770DD;
 
     --color-light-1: #fff;
     --color-light-2: #8391a2;
@@ -61,6 +63,11 @@ Locally hosted fonts
     --tablet-width: 768px;
     --mobile-width: 600px;
     --mobile-small-width: 400px;
+
+    --padding-default: 1.5rem;
+    @media only screen and (max-width: 400px) {
+        --padding-default: 1rem;
+    }
 }
   
 html {
