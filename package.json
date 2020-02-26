@@ -6,13 +6,15 @@
   "scripts": {
     "c": "node-sass --output-style compressed src/sass/main.scss assets/css/style.css -w",
     "p": "postcss --output-style compressed -u autoprefixer -r assets/css/style.css",
-    "compilets": "tsc --watch & nodemon src/typescript/main.ts"
+    "compilets": "tsc --watch & nodemon src/typescript/main.ts",
+    "config": "tsc --watch & nodemon src/typescript/config.ts"
   },
   "author": "Jure Rotar",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.6.5",
-    "node-sass": "*",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
     "postcss-cli": "^6.1.3",
     "typescript": "^3.6.4"
   }

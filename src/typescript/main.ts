@@ -1,64 +1,35 @@
 /**
- * Descriptions used on the extendables
+ * Import user configuration from config.js file
  */
-const Descriptions:any = {
-    'AbsenceRequest': {
-        'title': 'Dopusti',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="image__task"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg>'  
-    },
-    'Contracts': {
-        'title': 'Pogodbe',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img' : '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="image__task"><path fill="currentColor" d="M288 248v28c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-28c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm-12 72H108c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-28c0-6.6-5.4-12-12-12zm108-188.1V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h204.1C264.8 0 277 5.1 286 14.1L369.9 98c9 8.9 14.1 21.2 14.1 33.9zm-128-80V128h76.1L256 51.9zM336 464V176H232c-13.3 0-24-10.7-24-24V48H48v416h288z"></path></svg>'
-    },
-    'ISO': {
-        'title': 'ISO',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img' : '<svg class = "image__task" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>'
-    },
-    'Prejeti račun': {
-        'title': 'Prejeti računi',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img' : '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="image__task"><path fill="currentColor" d="M377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM64 72c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8V72zm0 80v-16c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8zm144 263.88V440c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-24.29c-11.29-.58-22.27-4.52-31.37-11.35-3.9-2.93-4.1-8.77-.57-12.14l11.75-11.21c2.77-2.64 6.89-2.76 10.13-.73 3.87 2.42 8.26 3.72 12.82 3.72h28.11c6.5 0 11.8-5.92 11.8-13.19 0-5.95-3.61-11.19-8.77-12.73l-45-13.5c-18.59-5.58-31.58-23.42-31.58-43.39 0-24.52 19.05-44.44 42.67-45.07V232c0-4.42 3.58-8 8-8h16c4.42 0 8 3.58 8 8v24.29c11.29.58 22.27 4.51 31.37 11.35 3.9 2.93 4.1 8.77.57 12.14l-11.75 11.21c-2.77 2.64-6.89 2.76-10.13.73-3.87-2.43-8.26-3.72-12.82-3.72h-28.11c-6.5 0-11.8 5.92-11.8 13.19 0 5.95 3.61 11.19 8.77 12.73l45 13.5c18.59 5.58 31.58 23.42 31.58 43.39 0 24.53-19.05 44.44-42.67 45.07z"></path></svg>'
-    },
-    'IncomingPost': {
-        'title': 'Obvestila',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img' : '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="image__task"><path fill="currentColor" d="M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71zM67.53 368c21.22-27.97 44.42-74.33 44.53-159.42 0-.2-.06-.38-.06-.58 0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58.11 85.1 23.31 131.46 44.53 159.42H67.53zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64z"></path></svg>'
-    },
-    'PurchaseOrder': {
-        'title': 'Nakupi',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img' : '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="image__task"><path fill="currentColor" d="M310.706 413.765c-1.314-6.63-7.835-10.872-14.424-9.369-10.692 2.439-27.422 5.413-45.426 5.413-56.763 0-101.929-34.79-121.461-85.449h113.689a12 12 0 0 0 11.708-9.369l6.373-28.36c1.686-7.502-4.019-14.631-11.708-14.631H115.22c-1.21-14.328-1.414-28.287.137-42.245H261.95a12 12 0 0 0 11.723-9.434l6.512-29.755c1.638-7.484-4.061-14.566-11.723-14.566H130.184c20.633-44.991 62.69-75.03 117.619-75.03 14.486 0 28.564 2.25 37.851 4.145 6.216 1.268 12.347-2.498 14.002-8.623l11.991-44.368c1.822-6.741-2.465-13.616-9.326-14.917C290.217 34.912 270.71 32 249.635 32 152.451 32 74.03 92.252 45.075 176H12c-6.627 0-12 5.373-12 12v29.755c0 6.627 5.373 12 12 12h21.569c-1.009 13.607-1.181 29.287-.181 42.245H12c-6.627 0-12 5.373-12 12v28.36c0 6.627 5.373 12 12 12h30.114C67.139 414.692 145.264 480 249.635 480c26.301 0 48.562-4.544 61.101-7.788 6.167-1.595 10.027-7.708 8.788-13.957l-8.818-44.49z"></path></svg>'
-    },
-}
+import configuration from "./config.js";
 
 /**
- * Properties for each task will be saved in to this object
+ * Save configuration to global config variable
  */
-let DocumentProperties:any = {};
+const config:any = configuration();
 
 /**
- * User information should be generated dynamically for each user based on his login
- * credentials
+ * Import additional translations
  */
-const userInfo:object = {
-    name: 'Janez Ovsenik',
-    title: 'Administrator',
-    company: 'Sidoksis',
-    companyImage: 'sidoksisLogo.png',
-}
+import translations from "./translations.js";
+
+/**
+ * Save additional translations to global trans variable
+ */
+const trans:any = translations();
 
 /**
  *  Fetch translations and save them to the 'Translations' variable
  */
 let Translations:object[];
 
+/**
+ * Fetches translations file
+ */
 async function FetchTranslations() {
     try {
-        const MobileStartupJson = await (await fetch('assets/data/MobileStartup.json')).json();
-        Translations = MobileStartupJson.Translations;
+        const MobileStartupJson = await (await fetch(config.translationJsonPath)).json();
+        Translations = MobileStartupJson;
     }
     catch(e) {
         console.error(e);
@@ -69,12 +40,15 @@ async function FetchTranslations() {
 /**
  * Fetch actions and save them to the 'Actions' variable
  */
-let Actions:object[];
+let ActionsJson:object[];
 
+/**
+ * Fetches actions file
+ */
 async function FetchActions() {
     try {
-        const ActionsJson = await (await fetch('assets/data/GetMyMobileActions.json')).json();
-        Actions = ActionsJson;
+        const Actions = await (await fetch(config.actionJsonPath)).json();
+        ActionsJson = Actions;
     }
     catch(e) {
         console.error(e);
@@ -82,48 +56,43 @@ async function FetchActions() {
     }
 };
 
-
 /**
- * Proposed layout for comments
+ * Adds content to footer
  */
-/*
-Comments:object = {
-    Action: '',
-    ActionID: '',
-    Comments: [
-        {
-            OwnerID: '',
-            OwnerName: '',
-            CommentTime: '',
-            Comment: ''
-        }
-    ],
-
+function constructFooter():void {
+    const footer = document.getElementsByClassName('footer')[0];
+    const language = config.language;
+    trans[language].footer.forEach((element:any) => {
+        footer.innerHTML += `
+        <details class = "footer__details">
+            <summary class = "footer__summary">
+            ${element.title}
+            <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" ><path fill="currentColor" d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
+        </summary>
+        <p class = "footer__text">
+            ${element.text}
+        </p>
+    </details>`;
+    });
 }
-*/
 
 /**
- * Fetch comments and save them to the 'Comments' variable
+ * Adds content to copyright bar
  */
-let Comments:object[];
-
-async function FetchComments() {
-    try {
-        const CommentsJson = await (await fetch('assets/data/Comments.json')).json();
-        Comments = CommentsJson.Comments;
-    }
-    catch(e) {
-        console.error(e);
-        return Promise.resolve();
-    }
-};
-
+function constructCopyright():void {
+    const copyright = document.getElementsByClassName('footer__copyright')[0];
+    const language = config.language;
+    copyright.innerHTML = `
+    <p class = "title__copyright">
+        ${trans[language].copyright}
+    </p>`;
+}
 /**
  * 
  * @param UserInfoObject object with personalization info.
  * Note: image is determined from the username, it must follow name.surname.extension pattern
  */
-function PersonalizeNavigationBar(UserInfoObject:any):void {
+function PersonalizeNavigationBar():void {
     /**
      * Containers we'll be populating
      */
@@ -135,88 +104,96 @@ function PersonalizeNavigationBar(UserInfoObject:any):void {
     /**
      * Possible image extensions, add additional if required
      */
-    const ImageExtensions = ['.png', '.jpg', '.jpeg', '.gif'];
+    const ImageExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
     /**
-     * 'Jure Rotar' -> jure.rotar
+     * 'Rotar Jure' -> rotar.jure
      */
-    const ImagePathName = UserInfoObject.name.replace(' ', '.').toLowerCase();
+    const ImagePathName = Translations.DisplayName.replace(' ', '.').toLowerCase();
 
     /**
-     * Change the title to company name
+     * Change the title to company name if one has been set, default to Sidoksis
      */
-    document.title = UserInfoObject.company;
+    document.title = (config.companyName !== '') ? config.companyName : 'Sidoksis';
+    
+    /**
+     * String we'll be outputting
+     */
+    let CompanyImageContainerOutput:string = '';
 
-
+    /**
+     * Check if container has been created
+     */
     if(CompanyImageContainer) {
 
         /**
-         * String we'll be outputting
+         * Check if user wants to display company logo
          */
-        let CompanyImageContainerOutput:string = '';
+        if(config.displayCompanyLogo === true) {
+            /**
+             * Check if company image name has been set, else return sidoksis logo
+             */
+            CompanyImageContainerOutput += (config.companyLogoPath !== '') ? `<img src = "assets/img/logo/${config.companyLogoPath}" class = "image__companyPhoto" alt = "${(config.companyName !== '') ? config.companyName : 'Company logo'}">` : `<img src = "assets/img/logo/sidoksisLogo.png" class = "image__companyPhoto" alt = "Sidoksis d.o.o.">`;
+        }
 
         /**
-         * Check if company image name has been set, else return sidoksis logo
+         * Check if user wants to display company name
          */
-        if('companyImage' in UserInfoObject && UserInfoObject.companyImage !== '') {
-            CompanyImageContainerOutput += `<img src = "assets/img/logo/${UserInfoObject.companyImage}" class = "image__companyPhoto" alt = "${UserInfoObject.companyImage}">`;
+        if(config.displayCompanyName === true) {
+            CompanyImageContainerOutput += (config.companyName !== '') ? `<p class = "title__companyTitle">${config.companyName}</p>` : `<p class = "title__companyTitle">Sidoksis</p>`;
         }
-        else {
-            CompanyImageContainerOutput += `<img src = "assets/img/logo/sidoksisLogo.png" class = "image__companyPhoto" alt = "Neznano podjetje">`;
-        }
-        /**
-         * Check if company name has been set, else return 'Sidoksis'
-         */
-        if('company' in UserInfoObject && UserInfoObject.company !== '') {
-            CompanyImageContainerOutput += `<p class = "title__companyTitle">${UserInfoObject.company}</p>`;
-        }
-        else {
-            CompanyImageContainerOutput += `<p class = "title__companyTitle">Neznano podjetje</p>`;
-        }
-        /**
-         * Output in to image container
-         */
+    }
+
+    /**
+     * Output in to image container
+     */
+    if(CompanyImageContainer) {
         CompanyImageContainer.innerHTML = CompanyImageContainerOutput;
     }
+    /**
+     * Check if username container was created
+     */
     if(UsernameContainer) {
         /**
          * Check if current user has been set, else return default
          */
-        if('name' in UserInfoObject && UserInfoObject.name !== '') {
-            UsernameContainer!.innerHTML = UserInfoObject.name;
-        }
-        else {
-            UsernameContainer!.innerHTML = 'Neznan uporabnik';
+        if(config.displayUsername === true) {
+            UsernameContainer.innerHTML = Translations.DisplayName;
         }
     }
+    /**
+     * Check if user title container has been created
+     */
     if(UserTitleContainer) {
         /**
          * Check if current user title has been set, else return default
          */
-        if('title' in UserInfoObject && UserInfoObject.title !== '') {
-            UserTitleContainer.innerHTML = UserInfoObject.title;
-        }
-        else {
-            UsernameContainer!.innerHTML = 'Uporabnik';
+        if(config.displayUserTitle === true) {
+            UserTitleContainer.innerHTML = (Translations.DisplayName in config.customUserTitles) ? config.customUserTitles[Translations.DisplayName] : 'User';
         }
     }
+    /**
+     * Check if image container has been created
+     */
     if(ImageContainer) {
-        let ImageFound = false;
-        /**
-         * Check if photo exists for any of the extensions
-         * Warning: returns console errors if not found
-         */
-        for(let i:number = 0; i < ImageExtensions.length; i++) {
-            if(DetermineIfImageExists(`assets/img/users/${ImagePathName}${ImageExtensions[i]}`)) {
-                ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/${ImagePathName + ImageExtensions[i]}" alt = "${UserInfoObject.name}">`;
-                ImageFound = true;
-                break;
+        if(config.displayUserImage === true) {
+            let ImageFound = false;
+            /**
+             * Check if photo exists for any of the extensions
+             * Warning: returns console errors if not found
+             */
+            for(let i:number = 0; i < ImageExtensions.length; i++) {
+                if(async () => {return await DetermineIfImageExists(`assets/img/users/${ImagePathName + ImageExtensions[i]}`)}) {
+                    ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/${ImagePathName + ImageExtensions[i]}" alt = "${Translations.DisplayName}">`;
+                    ImageFound = true;
+                    break;
+                }
             }
-        }
-        /**
-         * If image has not been found, insert default image instead
-         */
-        if(!ImageFound) {
-            ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/default.user.png" alt = "Default user photo">`;
+            /**
+             * If image has not been found, insert default image instead
+             */
+            if(!ImageFound) {
+                ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/default.user.png" alt = "Default user photo">`;
+            }
         }
     }
 }
@@ -225,16 +202,8 @@ function PersonalizeNavigationBar(UserInfoObject:any):void {
  * Determines if image file exists by sending HEAD requests and returns true if yes
  * @param url path to the image
  */
-function DetermineIfImageExists(url:string):any {
-    const HttpRequest = new XMLHttpRequest();
-    HttpRequest.open('HEAD', url, false);
-    HttpRequest.send();
-    if(HttpRequest.status === 200) {
-        return true;
-    }
-    else {
-        return false;
-    }
+async function DetermineIfImageExists(url:string):Promise<boolean> {
+    return ((await fetch(url, { method: 'HEAD' })).status === 200) ? true : false;
 }
 
 /**
@@ -245,40 +214,16 @@ function DetermineIfImageExists(url:string):any {
 function DocumentShortData(currentAction:any, shorData:any ):any {
 
     /**
-     * json path to properties
+     * If task was missed, return a notice
+     */
+    let returnString:string = '';
+
+    let DocumentProperties:any = {};
+
+    /**
+     * Path to properties
      */
     const properties = currentAction.MasterDocument.Properties;
-
-    /**
-     * Unix timestamp in miliseconds
-     */
-    const UnixStartTime = new Date(currentAction.PlannedStartDate)
-
-    /**
-     * Planned end date in unix timestamp
-     */
-    const UnixEndTime = new Date(currentAction.PlannedEndDate);
-
-    /**
-     * String with html we're returning to the page
-     */
-    /**
-     *  Prejemnik naloge in čas, do kdaj naj se naloga zaključi
-     */
-    let returnString:string = `
-    <div class = "task__subgrid">
-        <span class = "title__subtitle">Izvajalec</span>
-        <p class = "title__taskPropertyValue title__taskPropertyValue--1">${currentAction.ActorName}</p>
-    </div>
-    <div class = "task__subgrid">
-        <span class = "title__subtitle">Rok</span>
-        <p class = "title__taskPropertyValue title__taskPropertyValue--1">${UnixEndTime.getDate()}.${UnixEndTime.getMonth()}.${UnixEndTime.getFullYear()} ${UnixEndTime.getHours()}:${UnixEndTime.getMinutes()}</p>
-    </div>
-    <div class = "task__subgrid">
-        <span class = "title__subtitle">Ustvarjeno</span>
-        <p class = "title__taskPropertyValue title__taskPropertyValue--1">${UnixStartTime.getDate()}.${UnixStartTime.getMonth()}.${UnixStartTime.getFullYear()} ${UnixStartTime.getHours()}:${UnixStartTime.getMinutes()}</p>
-    </div>
-    `;
 
     /**
      *  Za vsako lastnost iz spiska shorData prikaži vrednost podatka
@@ -288,13 +233,14 @@ function DocumentShortData(currentAction:any, shorData:any ):any {
         /**
          * Find first property that fits
          */
-        const prop = properties.find((x: {PropertyName:string }) => x.PropertyName === shorData[i].PropertyName);
+        const prop:any = properties.find((x: {PropertyName:string }) => x.PropertyName === shorData[i].PropertyName);
 
         /**
          * Check if property exists
          */
         if (typeof prop !== 'undefined') {
-            let Caption = shorData[i].Caption;
+            let Caption:string = shorData[i].Caption;
+            DocumentProperties[Caption] = prop.Value;
             returnString += `
             <div class = "task__subgrid">
                 <span class = "title__subtitle">${Caption}</span>
@@ -303,10 +249,10 @@ function DocumentShortData(currentAction:any, shorData:any ):any {
             `;
         }
     }
-    return returnString;
+    return [returnString, DocumentProperties];
 }
 
-async function Init() {
+async function constructBody():Promise<boolean> {
     /**
      * Get my actions which are available in 'Actions' variable
      */
@@ -320,20 +266,22 @@ async function Init() {
     /**
      * End the function if Actions or Translations aren't objects
      */
-    if(typeof(Actions) !== 'object' || typeof(Translations) !== 'object') {
-        console.error('Actions or Translations are not of the right type.')
+    if(typeof(ActionsJson) !== 'object' || typeof(Translations) !== 'object') {
+        console.error(`Actions or Translations are not of the right type. Actions is type of ${typeof(ActionsJson)} and Translations is type of ${typeof(Translations)}.`);
         return false;
     }
 
     /**
-     * Fill the personalized data
+     * Fill the personalized data if displayNavigationBar has been set to true in config file
      */
-    PersonalizeNavigationBar(userInfo);
+    if(config.displayNavigationBar === true) {
+        PersonalizeNavigationBar();
+    }
 
     /**
      * If response, translations and comments are not falsy, execute parsing
      */
-    if(Actions && Translations /*&& Comments*/) {
+    if(ActionsJson && Translations) {
 
         /**
          * Remove loading animation
@@ -343,7 +291,7 @@ async function Init() {
         /**
          * Check if database call is true
          */
-        if(Actions.DBCallResult) {
+        if(ActionsJson.DBCallResult === true) {
 
             /**
              * Container we'll be writing in
@@ -353,36 +301,50 @@ async function Init() {
             /**
              * string variabla, v katero se kreira html tekst za prikaz
              */
-            let content : string = '';
+            let content:string = '';
 
             /**
              *  Shrani spisek nalog v globalno variablo, da so doegljive drugod iz kode
              */
-            const DocTypes = Actions.InstanceActions;
-            //console.log(JSON.stringify(DocTypes));
+            const DocTypes = ActionsJson.InstanceActions;
+
+            /**
+             * Current document type
+             */
+            let currentDocumentType:string = '';
+
+            const lang = trans[config.language];
+
 
             /**
              *  Obdelaj vsak tip dokumenta
              */
             for (let i:number = 0; i < DocTypes.length; i++) {
-                let DetailsClass = 'task__details';
-                /**
-                 * Apply the noMarginBottom to the last element
-                 */
-                if(i === DocTypes.length - 1) {
-                    DetailsClass = 'task__details task__details--noMarginBottom';
-                }
+
+                const DetailsClass:string = (DocTypes.length - 1 === i) ? 'task__details task__details--noMarginBottom' : 'task__details';
+                let actionCount:number = 0;
+                DocTypes[i].Steps.forEach((element:{Actions:object[]}) => {
+                    actionCount += element.Actions.length
+                });
                 /**
                  *  Prikaži ime tipa dokumenta na ekran
                  */
                 let dt = (DocTypes[i].DocumentTypeName ?  DocTypes[i].DocumentTypeName:  DocTypes[i].DocumentType);
-                if(dt in Descriptions) {
+                /**
+                 * If document type has changed, begin new details element
+                 */
+                if(dt !== currentDocumentType) {
+                    /**
+                     * Update current document type
+                     */
+                    currentDocumentType = dt;
                     content += 
-                    `<details class = "${DetailsClass}" data-doctype = "${dt}">
+                    `<details class = "${DetailsClass}" data-action-count = "${actionCount}" data-step-count = "${DocTypes[i].Steps.length}" data-doctype = "${dt}" ${(config.extendableOpenByDefault === true) ? 'open' : ''}>
                         <summary class = "summary">
                             <div class = "summary__container--1">
                                 <div class = "summary__container--2">
-                                    <h2 class = "title__main title__main--1">${Descriptions[dt]['title']}</h2>
+                                    <h2 class = "title__main title__main--1">${dt}</h2>
+                                    <span class = "summary__taskCount">${lang.taskCount}: <span class = "summary__count">${actionCount}</span></span>
                                 </div>
                                 <div class = "summary__container--3">
                                     <div class="summary__icon"></div>
@@ -390,13 +352,10 @@ async function Init() {
                             </div>
                         </summary>`;
                 }
-                else {
-                    //content += `<div class = "c3" data-doctype = "${dt}"><p class = "p2">${dt}</p></div>`;
-                }
                 /**
                  *  Shrani spisek lastnosti za prikaz podatkov na posamezni nalogi
                  */
-                let shortData = DocTypes[i].PropertiesToShow;
+                let shortData:object = DocTypes[i].PropertiesToShow;
 
                 /**
                  * Če ni definiranih podatkov za prikaz, naredi default
@@ -441,13 +400,14 @@ async function Init() {
                     /**
                      *  Piši ime koraka na ekran 
                      */
-                    let desc = actsteps[j].StepName;
-                    content += `
+                    //let desc = actsteps[j].StepName;
+                    if(config.displayDocumentTypeDescription === true && (dt in lang.documentTypeDescriptions)) {
+                        content += `
                         <div class = "title__container--1">
-                            <p class = "title__main title__main--2">${desc}</p>
-                            <p class = "title__description title__description--1">${Descriptions[dt]['desc']}</p>
+                            <p class = "title__description title__description--1">${lang.documentTypeDescriptions[dt]}</p>
                         </div>
-                        `
+                        `;
+                    }
 
                     /**
                      * Vsak korak vsebuje naloge
@@ -458,65 +418,99 @@ async function Init() {
                      * Obdelaj vsako nalogo znotraj koraka
                      */
                     for (let z:number = 0; z < actions.length; z++) {
-
                         /**
                          * Save properties to Data variable
                          */
                         const Data = DocumentShortData(actions[z], shortData);
 
-                        /***
-                         * Naj se pokaže ukaz za prikaz slike
-                         */
-                        let pdfclass = 'invisible';
-                        let cmtclass = 'invisible';
-                        
-                        /**
-                         * Link na pdf je aktiven le, če dokument ima kak  blob, drugače pa ne
-                         */
-                        if (actions[z].MasterDocument.Pages && actions[z].MasterDocument.Pages.length > 0) {
-                            pdfclass = 'task__subgrid task__subgrid--button';
-                        }
-                        if (actions[z].MasterDocument.Comments && actions[z].MasterDocument.Comments.length > 0) {
-                            cmtclass = 'task__subgrid task__subgrid--button';                            
-                        }
-
                         /**
                          *   Piši podatke o nalogi in prikaži gumbe za ukaze
                          */
-                        content += `
-                            <div class = "task__container">
-                                <div class = "task__titleContainer">
-                                    <div class = "task__title">
-                                        <span class = "title__subtitle">Naslov dokumenta</span>
-                                        <p class = "title__taskPropertyValue title__taskPropertyValue--2">${actions[z].MasterDocumentId}</p>
-                                    </div>
-                                    <div class = "task__image">
-                                        ${Descriptions[dt]['img']}
-                                    </div>
+                        content += `<div class = "task__container" data-masterdocumentid = "${actions[z].MasterDocumentId}">
+                            <div class = "task__titleContainer">
+                                <div class = "task__title">
+                                    <span class = "title__subtitle">${lang.docTitle}</span>
+                                    <p class = "title__taskPropertyValue title__taskPropertyValue--2">${actions[z].MasterDocumentId}</p>
                                 </div>
-                                <div class = "task__grid task__grid--1">
-                                    ${Data}
+                                <div class = "task__image">
+                                    ${(config.displayIcons === true) ? ((dt in config.iconCodes) ? config.iconCodes[dt] : '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>') : ''}
                                 </div>
-                                <div class = "task__grid task__grid--1">
-                                    <div class = "task__subgrid actions">
-                                        <span class = "title__subtitle">Potrdi</span>
-                                        <button class = "button__action button__action--green" data-action = "confirm" data-actionID = "${actions[z].WorkflowActionId}">Potrdi</button>
-                                    </div>
-                                    <div class = "task__subgrid actions">
-                                        <span class = "title__subtitle">Zavrni</span>
-                                        <button class = "button__action button__action--red" data-action = "deny" data-actionID = "${actions[z].WorkflowActionId}">Zavrni</button>
-                                    </div>
-                                    <div class = "${cmtclass}">
-                                        <span class = "title__subtitle">Komentarji</span>
-                                        <button class = "button__action button__action--blue" data-action = "comments" data-actionID = "${actions[z].WorkflowActionId}">Komentarji</button>
-                                    </div>
-                                    <div class = "${pdfclass}">
-                                        <span class = "title__subtitle">Predogled</span>
-                                        <button class = "button__action button__action--purple" data-action = "info" data-actionID = "${actions[z].WorkflowActionId}">Prikaži PDF</button>
-                                    </div>
+                            </div>`;
+                        /**
+                         * If task end date has already passed, return red warning sign
+                         */
+                        if(new Date().getTime() >= new Date(actions[z].PlannedEndDate).getTime()) {
+                            content += `<div class = "task__title">
+                                <span class = "title__subtitle">${(lang.noticeCustomSubtitle) ? lang.noticeCustomSubtitle : 'Deadline'}</span>
+                                <div class = "task__title  task__title--warning">
+                                    <img src = "assets/img/icons/warning-signal.svg" class = "task__warningImage">
+                                    <span class = "task__text--danger">${(lang.noticeExpiredCustomText !== '') ? `${lang.noticeExpiredCustomText}` : 'Deadline was missed'}</span>
                                 </div>
+                            </div>`;
+                        }
+                        /**
+                         * If the number of days until task end is less than number of days set in daysUntilWarningDisplays config variable, display yellow warning
+                         */
+                        else if((new Date(actions[z].PlannedEndDate).getTime() - new Date().getTime()) <= (86400000 * config.daysUntilWarningDisplays)) {
+                            content += `<div class = "task__title">
+                                <span class = "title__subtitle">${(lang.noticeCustomSubtitle !== '') ? lang.noticeCustomSubtitle : 'Deadline'}</span>
+                                <div class = "task__title  task__title--warning">
+                                    <img src = "assets/img/icons/warningsign.svg" class = "task__warningImage">
+                                    <span class = "task__text--warning">${((lang.noticeExpiredCustomText !== '') ? lang.noticeTimeLeftWarningCustomText : 'Notice: Remaining') + ' ' + timeRemaining(actions[z].PlannedEndDate)}</span>
+                                </div>
+                            </div>`;
+                        }
+                        /**
+                         * If task hasn't passed and it still has enough time, display green sign
+                         */
+                        else {
+                            content += `<div class = "task__title">
+                                <span class = "title__subtitle">${(lang.noticeCustomSubtitle) ? lang.noticeCustomSubtitle : 'Deadline'}</span>
+                                <div class = "task__title  task__title--warning">
+                                    <img src = "assets/img/icons/checksign.svg" class = "task__warningImage">
+                                    <span class = "task__text--accept">${((lang.noticeTimeLeftCustomText !== '') ? lang.noticeTimeLeftCustomText : 'Remaining') + ' ' + timeRemaining(actions[z].PlannedEndDate)}</span>
+                                </div>
+                            </div>`;
+                        }
+                        content += `<div class = "task__grid task__grid--1">
+                                ${Data[0]}
                             </div>
-                        `;
+                            <div class = "task__grid task__grid--1">
+                                <div class = "task__subgrid actions">
+                                    <span class = "title__subtitle">${(lang.buttonCustomSubtitle['Confirm'] !== '') ? lang.buttonCustomSubtitle['Confirm'] : 'Approve'}</span>
+                                    <button class = "button__action button__action--green" data-stepname = "${actsteps[j].StepName}" data-dt = "${dt}" ${(config.buttonCustomColor['Confirm'] !== '') ? `style="background-color:${config.buttonCustomColor['Confirm']}"` : ''} data-action = "confirm" data-actionID = "${actions[z].MasterDocumentId}">${(lang.buttonCustomLabel['Confirm'] !== '') ? lang.buttonCustomLabel['Confirm'] : 'Confirm' }</button>
+                                </div>
+                                <div class = "task__subgrid actions">
+                                    <span class = "title__subtitle">${(lang.buttonCustomSubtitle['Reject'] !== '') ? lang.buttonCustomSubtitle['Reject'] : 'Reject'}</span>
+                                    <button class = "button__action button__action--red" data-stepname = "${actsteps[j].StepName}" data-dt = "${dt}" ${(config.buttonCustomColor['Reject'] !== '') ? `style="background-color:${config.buttonCustomColor['Reject']}"` : ''} data-action = "reject" data-actionID = "${actions[z].MasterDocumentId}">${(lang.buttonCustomLabel['Reject'] !== '') ? lang.buttonCustomLabel['Reject'] : 'Reject' }</button>
+                                </div>`;
+                        /**
+                         * View comments button displays only if any comments exist
+                         */
+                        content += (actions[z].MasterDocument.Comments && actions[z].MasterDocument.Comments.length > 0) ? `
+                                <div class = "task__subgrid task__subgrid--button">
+                                    <span class = "title__subtitle">${(lang.buttonCustomSubtitle['Comments'] !== '') ? lang.buttonCustomSubtitle['Comments'] : 'View comments'}</span>
+                                    <button class = "button__action button__action--blue" data-stepname = "${actsteps[j].StepName}" data-dt = "${dt}" ${(config.buttonCustomColor['Comments'] !== '') ? `style="background-color:${config.buttonCustomColor['Comments']}"` : ''} data-action = "comments" data-actionID = "${actions[z].MasterDocumentId}">${(lang.buttonCustomLabel['Comments'] !== '') ? lang.buttonCustomLabel['Comments'] : 'View comments' }</button>
+                                </div>` : '';
+                        /**
+                         * We add diffent data to this button, we need a document id and pageNo
+                         */
+                        let documentId:number = actions[z].MasterDocument.Properties.find((el:{PropertyName: string, Value:number}) => el.PropertyName === '_DocumentId').Value;
+                        /**
+                         * Page number is null if its not defined
+                         */
+                        let pageNo:number|null = ('Pages' in actions[z].MasterDocument) ? actions[z].MasterDocument.Pages[0].PageNo : null;
+                        /**
+                         * Add view document button if any document exists
+                         */
+                        content += (actions[z].MasterDocument.Pages && actions[z].MasterDocument.Pages.length > 0) ? 
+                            `<div class = "task__subgrid task__subgrid--button">
+                                <span class = "title__subtitle">${(lang.buttonCustomSubtitle['View'] !== '') ? lang.buttonCustomSubtitle['View'] : 'Attachments'}</span>
+                                <button class = "button__action button__action--purple" data-documentid = "${documentId}" data-pageno = "${(pageNo !== null) ? pageNo : ''}" ${(config.buttonCustomColor['View'] !== '') ? `style="background-color:${config.buttonCustomColor['View']}"` : ''} data-action = "view">${(lang.buttonCustomLabel['View'] !== '') ? lang.buttonCustomLabel['View'] : 'View item' }</button>
+                            </div>` : '';
+                        content+= `
+                            </div>
+                        </div>`;
                     }
                 }
                 /**
@@ -531,7 +525,7 @@ async function Init() {
          * Raise an error
          */
         else {
-            console.error(Actions.ErrorMessage);
+            console.error(ActionsJson.ErrorMessage);
             return false;
         }
     }
@@ -543,105 +537,269 @@ async function Init() {
     }
 }
 
-async function AttachEventHandlers() {
+async function Init():Promise<boolean|undefined> {
     /**
      * Wait until Init creates basic html structure and constucts the dynamic part of the application
      */
-    if(await Init() ){
+    if(await constructBody()){
         const PopupCloseButton = <HTMLButtonElement>document.querySelector('.popup__close');
         PopupCloseButton.addEventListener('click', () => {
             /**
-             * If Popup() is called without argument, its meant only to close the popup
+             * If Popup() is called without argument or with empty object, its meant only to close the popup
              */
             Popup();
         });
         /**
-         * Array of possible user actions
-         * approve - user can approve of the document with or without a comment
-         * deny - user can deny the document
-         * comments - user can read previous comments
-         * pdf - user can see actual document
+         * Possible actions
          */
-        const DataAttributes = ['confirm', 'deny', 'comments', 'info'];
+        const DataAttributes = ['confirm', 'reject', 'comments', 'view'];
         DataAttributes.forEach(element => {
             const Elements = document.querySelectorAll(`[data-action='${element}']`);
             Elements.forEach(el => {
                 const Action = el.getAttribute('data-action');
-                const ActionID = el.getAttribute('data-actionid');
-                switch(Action) {
-                    case 'confirm':
-                        el.addEventListener('click', () => {
-                            Popup({
-                                Action: Action,
-                                ActionID: ActionID,
-                                Comments: [
-                                    {
-                                        OwnerID: '',
-                                        OwnerName: '',
-                                        CommentTime: '',
-                                        Comment: ''
-                                    }
-                                ]
-                            });
-                        })
-                        break;
-                    case 'deny':
-                        el.addEventListener('click', () => {
-                            Popup({
-                                Action: Action,
-                                ActionID: ActionID,
-                                Comments: [
-                                    {
-                                        OwnerID: '',
-                                        OwnerName: '',
-                                        CommentTime: '',
-                                        Comment: ''
-                                    }
-                                ]
-                            });
-                        })
-                        break;
-                    case 'comments':
-                        el.addEventListener('click', () => {
-                            Popup({
-                                Action: Action,
-                                ActionID: ActionID,
-                                Comments: [
-                                    {
-                                        OwnerID: '',
-                                        OwnerName: '',
-                                        CommentTime: '',
-                                        Comment: ''
-                                    }
-                                ]
-                            });
-                        })
-                        break;
-                    case 'info':
-                        el.addEventListener("click", () => {
-                            fetch(`DMSDataService.svc/getdocument?documentid=${ActionID}&positionlevel=0&includetasks=false` /* Add credentials here */)
-                            .then(
-                                
-                            );
-                        });
-                        break;
+                /**
+                 * Open popup on 'confirm', 'reject' or 'comments' buttons
+                 */
+                if(Action === 'confirm' || Action === 'reject' || Action === 'comments') {
+                    /**
+                     * Specific attributes for these action buttons
+                     */
+                    const ActionID = el.getAttribute('data-actionid');
+                    const documentType = el.getAttribute('data-dt');
+                    const stepName = el.getAttribute('data-stepname');
+                    el.addEventListener('click', () => {
+                        Popup({Action: Action, ActionID: parseInt(ActionID!), documentType: documentType, stepName: stepName})
+                    });
+                }
+                /**
+                 * Request blob on view document
+                 */
+                else {
+                    const documentId = el.getAttribute('data-documentid');
+                    const pageNo = el.getAttribute('')
+                    el.addEventListener("click", async () => {
+                        /**
+                         * unencoded extensions
+                         */
+                        const nonEncodedExtensions:string[] = ['.xml', '.txt']; 
+                        /**
+                         * Save whole object to response variable
+                         */
+                        const response:any = await requestBlob({DocumentId: parseInt(documentId!), PageNo: parseInt(pageNo!)});
+                        const fileExtension = response.Documents.Pages.DataType;
+                        const data:any = (!(fileExtension in nonEncodedExtensions)) ? window.atob(response.Documents.Pages.PageData) : response.Documents.Pages.PageData;
+                        showFile(data, fileExtension);
+
+                        function showFile(blob:Blob, fileExtension:string) {
+
+                            const newBlob = new Blob([blob], {
+                                type: `application/${fileExtension.replace('.', '')}`
+                            })
+                        
+                            // IE doesn't allow using a blob object directly as link href
+                            // instead it is necessary to use msSaveOrOpenBlob
+                            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                                window.navigator.msSaveOrOpenBlob(newBlob);
+                                return;
+                            } 
+                        
+                            // For other browsers: 
+                            // Create a link pointing to the ObjectURL containing the blob.
+                            const data = window.URL.createObjectURL(newBlob);
+                            const link = document.createElement('a');
+                            link.href = data;
+                            link.download="file.pdf";
+                            link.click();
+                            setTimeout(() => {
+                            // For Firefox it is necessary to delay revoking the ObjectURL
+                                window.URL.revokeObjectURL(data);
+                            }, 100);
+                        }
+                    });
                 }
             })
+            return true;
         });
     }
     else {
         console.error('Cannot initiate page construction.');
+        return false;
     }
 }
 
 /**
  * Opens the popup and hides the background
  */
-const Popup = (PopupSettings:any = {}):void => {
+function Popup(PopupSettings:{Action:string|null, ActionID: number|null,documentType: string|null,stepName: string|null} = {Action: null, ActionID: null,documentType: null,stepName: null}):void {
+    const commentContainer = <HTMLDivElement>document.getElementById('comment-container');
+    const lang = trans[config.language];
+    const inputContainer = <HTMLDivElement>document.getElementsByClassName('popup__inputContainer')[0];
+    const buttonContainer = <HTMLDivElement>document.querySelector('.popup__buttonContainer');
+
+    darkenAndPreventScroll();
+
+    /**
+     * First clear the comment container of any previous entries
+     */
+    commentContainer.innerHTML = '';
+    /**
+     * Clear the textarea to remove custom attributes and event handlers
+     */
+    inputContainer.innerHTML = '';
+    /**
+     * Remove the submit button to remove custom attributes and event handlers
+     */
+    buttonContainer.innerHTML = '';
+
+    /**
+     * Check if settings are not null
+     */
+    if(PopupSettings.Action !== null && PopupSettings.ActionID !== null && PopupSettings.documentType !== null && PopupSettings.stepName !== null) {
+        /**
+         * approve, reject, comments, pdf
+         */
+        const Action = PopupSettings.Action;
+        const ActionID = PopupSettings.ActionID;
+        const documentType = PopupSettings.documentType;
+        const stepName = PopupSettings.stepName;
+        const PopupTitle = <HTMLParagraphElement>document.getElementById('popup-title');
+        const popupSubtitle = <HTMLParagraphElement>document.getElementById('popup-subtitle');
+        /**
+         * Show document id on the popup
+         */
+        if(PopupTitle) {
+            PopupTitle.innerHTML = ActionID.toString();
+        }
+        /**
+         * Show translated subtitle on the popup above action id
+         */
+        if(popupSubtitle) {
+            popupSubtitle.innerHTML = lang.docTitle;
+        }
+        /**
+         * Includes task properties
+         */
+        const taskProperties = ActionsJson.InstanceActions.find(
+            (el: {DocumentType:string, DocumentTypeName:string}) => (el.DocumentType === documentType || el.DocumentTypeName === documentType)).Steps
+            .find((el: {StepName:string}) => el.StepName == stepName).Actions
+            .find((a: {MasterDocumentId:number}) => a.MasterDocumentId == ActionID).MasterDocument;
+        /**
+         * Get the WorkflowActionID value from json file
+         */
+        const workflowActionId = ActionsJson.InstanceActions.find(
+            (el: {DocumentType:string, DocumentTypeName:string}) => (el.DocumentType === documentType || el.DocumentTypeName === documentType)).Steps
+            .find((el: {StepName:string}) => el.StepName == stepName).Actions
+            .find((el: {MasterDocumentId:number}) => el.MasterDocumentId == ActionID).WorkflowActionId;
+
+        commentContainer.innerHTML = displayPopupComments(('Comments' in taskProperties) ? taskProperties.Comments : []);
+
+        if(Action === 'confirm') {
+            /** 
+             * Add submit button
+             */
+            buttonContainer.innerHTML = `<button id = "confirm-button" class = "button__action button__action--green" ${(config.buttonCustomColor['Confirm'] !== '') ? `style="background-color:${config.buttonCustomColor['Confirm']}"` : ''}>${(lang.buttonCustomLabel['Confirm'] !== '') ? lang.buttonCustomLabel['Confirm'] : 'Confirm' }</button>`;
+            inputContainer.innerHTML = `<span class = "title__subtitle" id = "popup-textarea-subtitle">${lang.textarea.confirmSubtitleText}</span><textarea placeholder = "${lang.textarea.confirmPlaceholderText}" class = "popup__textarea popup__textarea--green" id = "popup-textarea" value = ""></textarea>`;
+            inputContainer.style.display = 'flex';
+            const btn = <HTMLButtonElement>document.getElementById('confirm-button');
+            const textarea = <HTMLTextAreaElement>document.getElementById('popup-textarea');
+            if(btn) {
+                btn.addEventListener('click', () => {
+                    /**
+                     * If server responds with true, hide popup, remove action and decrease count on parent
+                     */
+                    if(sendData({WorkflowActionId: workflowActionId, ActionResult: 'Commit', Comment: textarea.value})) {
+                        closeAndRemove(ActionID);
+                    }
+                });
+            }
+        }
+        else if(Action === 'reject') {
+            /** 
+             * Add submit button
+             */
+            buttonContainer.innerHTML = `<button disabled id = "confirm-button" class = "button__action button__action--red" ${(config.buttonCustomColor['Reject'] !== '') ? `style="background-color:${config.buttonCustomColor['Reject']}"` : ''}>${(lang.buttonCustomLabel['Reject'] !== '') ? lang.buttonCustomLabel['Reject'] : 'Reject' }</button>`;
+            inputContainer.innerHTML = `<span class = "title__subtitle" id = "popup-textarea-subtitle">${lang.textarea.rejectSubtitleText}</span><textarea placeholder = "${lang.textarea.rejectPlaceholderText}" class = "popup__textarea popup__textarea--red" id = "popup-textarea" value = ""></textarea>`;
+            inputContainer.style.display = 'flex';
+            const btn = <HTMLButtonElement>document.getElementById('confirm-button');
+            const textarea = <HTMLButtonElement>document.getElementById('popup-textarea');
+            /**
+             * If textarea is filled, remove 'disabled' from button
+             */
+            if(textarea) {
+                textarea.addEventListener('keyup', () => {
+                    if(textarea.value.length > 0) {
+                        btn.removeAttribute('disabled');
+                        textarea.style.borderColor = 'var(--color-green-3)';
+                    }
+                    else {
+                        btn.setAttribute('disabled', "true");
+                        textarea.style.borderColor = "var(--color-red-1)";
+                    }
+                })
+            }
+            if(btn) {
+                btn.addEventListener('click', () => {
+                    /**
+                     * If server responds with true, hide popup, remove action and decrease count on parent
+                     */
+                    if(sendData({WorkflowActionId: workflowActionId, ActionResult: 'Commit', Comment: textarea.value})) {
+                        closeAndRemove(ActionID!);
+                    }
+                });
+            }
+        }
+        else if(Action === 'comments') {
+
+        }
+    }
+}
+
+/**
+ * Sends a post request to link specified in config file, returns true if successful and false if not
+ * @param message json object we'll send
+ */
+async function sendData(message: {WorkflowActionId:number, ActionResult:string, Comment: string}):Promise<boolean> {
+    /**
+     * If no comment has been added, remove the property
+     */
+    if(message.Comment == '') {
+        delete message.Comment;
+    }
+    const response = await (await fetch(config.requestPath, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+    })).json();
+    /**
+     * Returns either true/false
+     */
+    return response.DBCallResult;
+}
+
+async function requestBlob(obj: {DocumentId:number, PageNo: number}):Promise<object> {
+    const response = await(await fetch(`${config.blobPath}?documentid=${obj.DocumentId}&pageno=${obj.PageNo}`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })).json();
+    return response;
+}
+
+/**
+ * Applies blur and darken filter to footer, copyright bar and main section when popup is open
+ */
+function darkenAndPreventScroll():void {
     const Popup = <HTMLDivElement>document.querySelector('.popup');
     const Main = <HTMLElement>document.getElementsByTagName('main')[0];
     const Nav = <HTMLElement>document.querySelector('.navigation');
     const HTML = <HTMLHtmlElement>document.getElementsByTagName('html')[0];
+    const footer = <HTMLDivElement>document.getElementsByClassName('footer')[0];
+    const copyright = <HTMLDivElement>document.getElementsByClassName('footer__copyright')[0];
     const WidescreenContainer = <HTMLHtmlElement>document.querySelector('.widescreenSmallContainer');
     /**
      * Prevent scroll on mobile
@@ -660,44 +818,187 @@ const Popup = (PopupSettings:any = {}):void => {
      */
     Main.classList.contains('darken-blur') ? Main.classList.remove('darken-blur') : Main.classList.add('darken-blur');
     /**
+     * Blur and darken the main element
+     */
+    footer.classList.contains('darken-blur') ? footer.classList.remove('darken-blur') : footer.classList.add('darken-blur');
+    /**
+     * Blur and darken the main element
+     */
+    copyright.classList.contains('darken-blur') ? copyright.classList.remove('darken-blur') : copyright.classList.add('darken-blur');
+    /**
      * Displaying the popup
      */
     Popup.setAttribute('data-open', (Popup.getAttribute('data-open') === 'closed') ? 'open' : 'closed');
+}
 
-    /*
-    Comments:object = {
-        Action: '',
-        ActionID: '',
-        CommentRequired: true,
-        Comments: [
-            {
-                OwnerID: '',
-                OwnerName: '',
-                CommentTime: '',
-                Comment: ''
-            }
-        ],
-
-    }
-    */
+/**
+ * Returns human readable date
+ * @param date unix time
+ */
+function niceTime(date:Date):string {
     /**
-     * Check if settings are not empty
+     * ~ 26.6.2020
      */
-    if(Object.entries(PopupSettings).length !== 0) {
-        /**
-         * approve, deny, comments, pdf
-         */
-        const Action = PopupSettings.Action;
-        const ActionID = PopupSettings.ActionID;
-        const PopupTitle = document.getElementById('popup-title');
-        if(PopupTitle) {
-            PopupTitle.innerHTML = ActionID
-        }
-        const CommentRequired = PopupSettings.CommentRequired;
+    return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
+}
+
+/**
+ * Retuns human readable remaing time
+ * @param plannedEndDate unix time
+ */
+function timeRemaining(plannedEndDate:string):string {
+    const now:number = new Date().getTime();
+    const endDate:number = new Date(plannedEndDate).getTime();
+    if(endDate <= now) {
+        return '';
     }
+    let timeDifference:number = (endDate - now) / 1000;
+    const days = Math.floor(timeDifference / 86400);
+    timeDifference -= days * 86400;
+    const hours = Math.floor(timeDifference / 3600) % 24;
+    timeDifference -= hours * 3600;
+    const minutes = Math.floor(timeDifference / 60) % 60;
+    timeDifference -= minutes * 60;    
+    return `${(days) ? days + 'd' : ''} ${(hours) ? hours + 'd' : ''}h ${minutes}m`;
+}
+
+/**
+ * Removes specific element and it's parent if it has 0 viable children
+ * @param actionId MasterDocumentId of the element we'll be removing
+ */
+function closeAndRemove(actionId:number) {
+    /**
+     * Close the popup
+     */
+    Popup();
+    /**
+     * Task container we'll remove
+     */
+    const elementToRemove = document.querySelector(`[data-masterdocumentid="${actionId}"]`);
+    if(elementToRemove) {
+        /**
+         * Get parent details element
+         */
+        const parent = <HTMLDetailsElement>elementToRemove.closest('.task__details');
+        if(parent) {
+            /**
+             * Get the nubmer of chidl elements, those can include <summary> and title container + all task containers
+             */
+            let numberOfParentChildren:number = parent.childElementCount;
+            /**
+             * Check if title container exists in the parent
+             */
+            const titleContainer = <HTMLDivElement>parent.querySelector('.title__container--1') || null;
+            /**
+             * If title container exists, we need to reduce the number by 3, else by 2 (summary and element we're removing)
+             */
+            if(titleContainer !== null) {
+                numberOfParentChildren -= 3;
+            }
+            else {
+                numberOfParentChildren -= 2;
+            }
+            /**
+             * If parent has 0 children left, remove parent
+             */
+            if(numberOfParentChildren <= 0) {
+                parent.remove();
+            }
+            /**
+             * If parent still has non summary & title children, reduce the displayed number
+             */
+            else {
+                const countSpan = parent.querySelector('.summary__count');
+                parent.setAttribute('data-action-count', numberOfParentChildren.toString());
+                if(countSpan) {
+                    countSpan.innerHTML = numberOfParentChildren.toString();
+                }
+            }
+        }
+        /**
+         * Remove the element
+         */
+        elementToRemove.remove();
+    }
+}
+/**
+ * returns formated comments in popup
+ * @param arrayOfCommentObjects array of objects containing comment meta and text
+ */
+function displayPopupComments(arrayOfCommentObjects:object[] = []):string {
+    /**
+     * Current language
+     */
+    const lang = trans[config.language];
+    let styledComments:string = '';
+
+    /**
+     * If there are no comments, return 'no comment' template
+     */
+    if(arrayOfCommentObjects.length === 0) {
+        return `                        
+            <div class = "popup__commentMeta">
+                <div class = "popup__commentMeta--col">
+                <span class = "title__subtitle">
+                    ${lang.comments.comment}
+
+                </span>
+                <p class = "popup__text popup__text--comment">
+                    ${lang.comments.noComments}
+                </p>
+            </div>
+        </div>`;
+    }
+    /**
+     * For each comment, format it and add to output string
+     */
+    arrayOfCommentObjects.forEach((el:any) => {
+        styledComments += `<div class = "popup__commentMeta">
+            <div class = "popup__commentMeta--row">
+                <div class = "popup__commentMeta--col">
+                    <span class = "title__subtitle">
+                        ${lang.comments.author}
+                    </span>
+                    <p class = "popup__text popup__text--author">
+                        ${el.Owner}
+                    </p>
+                </div>
+                <div class = "popup__commentMeta--col" style = "flex:1;">
+                    <span class = "title__subtitle">
+                        ${lang.comments.date}
+
+                    </span>
+                    <p class = "popup__text popup__text--date">
+                        ${niceTime(new Date(el.CreationDate))}
+                    </p>
+                </div>
+            </div>
+            <div class = "popup__commentMeta--col">
+                <span class = "title__subtitle">
+                    ${lang.comments.comment}
+                </span>
+                <p class = "popup__text popup__text--comment">
+                    ${el.Comment}
+                </p>
+            </div>
+        </div>`;
+        })
+    return styledComments;
 }
 
 (function() {
-    AttachEventHandlers();
+    Init();
+    /**
+     * If user wants footer displayed, construct it
+     */
+    if(config.displayFooter === true) {
+        constructFooter();
+    }
+    /**
+     * If user wants copyright displayed, construct it
+     */
+    if(config.displayCopyrightBar === true) {
+        constructCopyright();
+    }
 })();
 

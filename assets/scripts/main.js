@@ -1,48 +1,12 @@
-"use strict";
-const Descriptions = {
-    'AbsenceRequest': {
-        'title': 'Dopusti',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="image__task"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg>'
-    },
-    'Contracts': {
-        'title': 'Pogodbe',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="image__task"><path fill="currentColor" d="M288 248v28c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-28c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm-12 72H108c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-28c0-6.6-5.4-12-12-12zm108-188.1V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h204.1C264.8 0 277 5.1 286 14.1L369.9 98c9 8.9 14.1 21.2 14.1 33.9zm-128-80V128h76.1L256 51.9zM336 464V176H232c-13.3 0-24-10.7-24-24V48H48v416h288z"></path></svg>'
-    },
-    'ISO': {
-        'title': 'ISO',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg class = "image__task" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>'
-    },
-    'Prejeti račun': {
-        'title': 'Prejeti računi',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="image__task"><path fill="currentColor" d="M377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM64 72c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8V72zm0 80v-16c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8zm144 263.88V440c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-24.29c-11.29-.58-22.27-4.52-31.37-11.35-3.9-2.93-4.1-8.77-.57-12.14l11.75-11.21c2.77-2.64 6.89-2.76 10.13-.73 3.87 2.42 8.26 3.72 12.82 3.72h28.11c6.5 0 11.8-5.92 11.8-13.19 0-5.95-3.61-11.19-8.77-12.73l-45-13.5c-18.59-5.58-31.58-23.42-31.58-43.39 0-24.52 19.05-44.44 42.67-45.07V232c0-4.42 3.58-8 8-8h16c4.42 0 8 3.58 8 8v24.29c11.29.58 22.27 4.51 31.37 11.35 3.9 2.93 4.1 8.77.57 12.14l-11.75 11.21c-2.77 2.64-6.89 2.76-10.13.73-3.87-2.43-8.26-3.72-12.82-3.72h-28.11c-6.5 0-11.8 5.92-11.8 13.19 0 5.95 3.61 11.19 8.77 12.73l45 13.5c18.59 5.58 31.58 23.42 31.58 43.39 0 24.53-19.05 44.44-42.67 45.07z"></path></svg>'
-    },
-    'IncomingPost': {
-        'title': 'Obvestila',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="image__task"><path fill="currentColor" d="M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71zM67.53 368c21.22-27.97 44.42-74.33 44.53-159.42 0-.2-.06-.38-.06-.58 0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58.11 85.1 23.31 131.46 44.53 159.42H67.53zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64z"></path></svg>'
-    },
-    'PurchaseOrder': {
-        'title': 'Nakupi',
-        'desc': 'Potrdite ali zavrnite prošnje za dopust.',
-        'img': '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="image__task"><path fill="currentColor" d="M310.706 413.765c-1.314-6.63-7.835-10.872-14.424-9.369-10.692 2.439-27.422 5.413-45.426 5.413-56.763 0-101.929-34.79-121.461-85.449h113.689a12 12 0 0 0 11.708-9.369l6.373-28.36c1.686-7.502-4.019-14.631-11.708-14.631H115.22c-1.21-14.328-1.414-28.287.137-42.245H261.95a12 12 0 0 0 11.723-9.434l6.512-29.755c1.638-7.484-4.061-14.566-11.723-14.566H130.184c20.633-44.991 62.69-75.03 117.619-75.03 14.486 0 28.564 2.25 37.851 4.145 6.216 1.268 12.347-2.498 14.002-8.623l11.991-44.368c1.822-6.741-2.465-13.616-9.326-14.917C290.217 34.912 270.71 32 249.635 32 152.451 32 74.03 92.252 45.075 176H12c-6.627 0-12 5.373-12 12v29.755c0 6.627 5.373 12 12 12h21.569c-1.009 13.607-1.181 29.287-.181 42.245H12c-6.627 0-12 5.373-12 12v28.36c0 6.627 5.373 12 12 12h30.114C67.139 414.692 145.264 480 249.635 480c26.301 0 48.562-4.544 61.101-7.788 6.167-1.595 10.027-7.708 8.788-13.957l-8.818-44.49z"></path></svg>'
-    },
-};
-let DocumentProperties = {};
-const userInfo = {
-    name: 'Janez Ovsenik',
-    title: 'Administrator',
-    company: 'Sidoksis',
-    companyImage: 'sidoksisLogo.png',
-};
+import configuration from "./config.js";
+const config = configuration();
+import translations from "./translations.js";
+const trans = translations();
 let Translations;
 async function FetchTranslations() {
     try {
-        const MobileStartupJson = await (await fetch('assets/data/MobileStartup.json')).json();
-        Translations = MobileStartupJson.Translations;
+        const MobileStartupJson = await (await fetch(config.translationJsonPath)).json();
+        Translations = MobileStartupJson;
     }
     catch (e) {
         console.error(e);
@@ -50,11 +14,11 @@ async function FetchTranslations() {
     }
 }
 ;
-let Actions;
+let ActionsJson;
 async function FetchActions() {
     try {
-        const ActionsJson = await (await fetch('assets/data/GetMyMobileActions.json')).json();
-        Actions = ActionsJson;
+        const Actions = await (await fetch(config.actionJsonPath)).json();
+        ActionsJson = Actions;
     }
     catch (e) {
         console.error(e);
@@ -62,105 +26,88 @@ async function FetchActions() {
     }
 }
 ;
-let Comments;
-async function FetchComments() {
-    try {
-        const CommentsJson = await (await fetch('assets/data/Comments.json')).json();
-        Comments = CommentsJson.Comments;
-    }
-    catch (e) {
-        console.error(e);
-        return Promise.resolve();
-    }
+function constructFooter() {
+    const footer = document.getElementsByClassName('footer')[0];
+    const language = config.language;
+    trans[language].footer.forEach((element) => {
+        footer.innerHTML += `
+        <details class = "footer__details">
+            <summary class = "footer__summary">
+            ${element.title}
+            <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" ><path fill="currentColor" d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg>
+        </summary>
+        <p class = "footer__text">
+            ${element.text}
+        </p>
+    </details>`;
+    });
 }
-;
-function PersonalizeNavigationBar(UserInfoObject) {
+function constructCopyright() {
+    const copyright = document.getElementsByClassName('footer__copyright')[0];
+    const language = config.language;
+    copyright.innerHTML = `
+    <p class = "title__copyright">
+        ${trans[language].copyright}
+    </p>`;
+}
+function PersonalizeNavigationBar() {
     const UsernameContainer = document.querySelector('.title__username');
     const UserTitleContainer = document.querySelector('.title__userTitle');
     const ImageContainer = document.querySelector('.navigation__imageContainer');
     const CompanyImageContainer = document.querySelector('.navigation__sectionContainer');
-    const ImageExtensions = ['.png', '.jpg', '.jpeg', '.gif'];
-    const ImagePathName = UserInfoObject.name.replace(' ', '.').toLowerCase();
-    document.title = UserInfoObject.company;
+    const ImageExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
+    const ImagePathName = Translations.DisplayName.replace(' ', '.').toLowerCase();
+    document.title = (config.companyName !== '') ? config.companyName : 'Sidoksis';
+    let CompanyImageContainerOutput = '';
     if (CompanyImageContainer) {
-        let CompanyImageContainerOutput = '';
-        if ('companyImage' in UserInfoObject && UserInfoObject.companyImage !== '') {
-            CompanyImageContainerOutput += `<img src = "assets/img/logo/${UserInfoObject.companyImage}" class = "image__companyPhoto" alt = "${UserInfoObject.companyImage}">`;
+        if (config.displayCompanyLogo === true) {
+            CompanyImageContainerOutput += (config.companyLogoPath !== '') ? `<img src = "assets/img/logo/${config.companyLogoPath}" class = "image__companyPhoto" alt = "${(config.companyName !== '') ? config.companyName : 'Company logo'}">` : `<img src = "assets/img/logo/sidoksisLogo.png" class = "image__companyPhoto" alt = "Sidoksis d.o.o.">`;
         }
-        else {
-            CompanyImageContainerOutput += `<img src = "assets/img/logo/sidoksisLogo.png" class = "image__companyPhoto" alt = "Neznano podjetje">`;
+        if (config.displayCompanyName === true) {
+            CompanyImageContainerOutput += (config.companyName !== '') ? `<p class = "title__companyTitle">${config.companyName}</p>` : `<p class = "title__companyTitle">Sidoksis</p>`;
         }
-        if ('company' in UserInfoObject && UserInfoObject.company !== '') {
-            CompanyImageContainerOutput += `<p class = "title__companyTitle">${UserInfoObject.company}</p>`;
-        }
-        else {
-            CompanyImageContainerOutput += `<p class = "title__companyTitle">Neznano podjetje</p>`;
-        }
+    }
+    if (CompanyImageContainer) {
         CompanyImageContainer.innerHTML = CompanyImageContainerOutput;
     }
     if (UsernameContainer) {
-        if ('name' in UserInfoObject && UserInfoObject.name !== '') {
-            UsernameContainer.innerHTML = UserInfoObject.name;
-        }
-        else {
-            UsernameContainer.innerHTML = 'Neznan uporabnik';
+        if (config.displayUsername === true) {
+            UsernameContainer.innerHTML = Translations.DisplayName;
         }
     }
     if (UserTitleContainer) {
-        if ('title' in UserInfoObject && UserInfoObject.title !== '') {
-            UserTitleContainer.innerHTML = UserInfoObject.title;
-        }
-        else {
-            UsernameContainer.innerHTML = 'Uporabnik';
+        if (config.displayUserTitle === true) {
+            UserTitleContainer.innerHTML = (Translations.DisplayName in config.customUserTitles) ? config.customUserTitles[Translations.DisplayName] : 'User';
         }
     }
     if (ImageContainer) {
-        let ImageFound = false;
-        for (let i = 0; i < ImageExtensions.length; i++) {
-            if (DetermineIfImageExists(`assets/img/users/${ImagePathName}${ImageExtensions[i]}`)) {
-                ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/${ImagePathName + ImageExtensions[i]}" alt = "${UserInfoObject.name}">`;
-                ImageFound = true;
-                break;
+        if (config.displayUserImage === true) {
+            let ImageFound = false;
+            for (let i = 0; i < ImageExtensions.length; i++) {
+                if (async () => { return await DetermineIfImageExists(`assets/img/users/${ImagePathName + ImageExtensions[i]}`); }) {
+                    ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/${ImagePathName + ImageExtensions[i]}" alt = "${Translations.DisplayName}">`;
+                    ImageFound = true;
+                    break;
+                }
+            }
+            if (!ImageFound) {
+                ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/default.user.png" alt = "Default user photo">`;
             }
         }
-        if (!ImageFound) {
-            ImageContainer.innerHTML = `<img class = "image__userPhoto" src = "assets/img/users/default.user.png" alt = "Default user photo">`;
-        }
     }
 }
-function DetermineIfImageExists(url) {
-    const HttpRequest = new XMLHttpRequest();
-    HttpRequest.open('HEAD', url, false);
-    HttpRequest.send();
-    if (HttpRequest.status === 200) {
-        return true;
-    }
-    else {
-        return false;
-    }
+async function DetermineIfImageExists(url) {
+    return ((await fetch(url, { method: 'HEAD' })).status === 200) ? true : false;
 }
 function DocumentShortData(currentAction, shorData) {
+    let returnString = '';
+    let DocumentProperties = {};
     const properties = currentAction.MasterDocument.Properties;
-    const UnixStartTime = new Date(currentAction.PlannedStartDate);
-    const UnixEndTime = new Date(currentAction.PlannedEndDate);
-    let returnString = `
-    <div class = "task__subgrid">
-        <span class = "title__subtitle">Izvajalec</span>
-        <p class = "title__taskPropertyValue title__taskPropertyValue--1">${currentAction.ActorName}</p>
-    </div>
-    <div class = "task__subgrid">
-        <span class = "title__subtitle">Rok</span>
-        <p class = "title__taskPropertyValue title__taskPropertyValue--1">${UnixEndTime.getDate()}.${UnixEndTime.getMonth()}.${UnixEndTime.getFullYear()} ${UnixEndTime.getHours()}:${UnixEndTime.getMinutes()}</p>
-    </div>
-    <div class = "task__subgrid">
-        <span class = "title__subtitle">Ustvarjeno</span>
-        <p class = "title__taskPropertyValue title__taskPropertyValue--1">${UnixStartTime.getDate()}.${UnixStartTime.getMonth()}.${UnixStartTime.getFullYear()} ${UnixStartTime.getHours()}:${UnixStartTime.getMinutes()}</p>
-    </div>
-    `;
     for (let i = 0; i < shorData.length; i++) {
         const prop = properties.find((x) => x.PropertyName === shorData[i].PropertyName);
         if (typeof prop !== 'undefined') {
             let Caption = shorData[i].Caption;
+            DocumentProperties[Caption] = prop.Value;
             returnString += `
             <div class = "task__subgrid">
                 <span class = "title__subtitle">${Caption}</span>
@@ -169,44 +116,49 @@ function DocumentShortData(currentAction, shorData) {
             `;
         }
     }
-    return returnString;
+    return [returnString, DocumentProperties];
 }
-async function Init() {
+async function constructBody() {
     await FetchActions();
     await FetchTranslations();
-    if (typeof (Actions) !== 'object' || typeof (Translations) !== 'object') {
-        console.error('Actions or Translations are not of the right type.');
+    if (typeof (ActionsJson) !== 'object' || typeof (Translations) !== 'object') {
+        console.error(`Actions or Translations are not of the right type. Actions is type of ${typeof (ActionsJson)} and Translations is type of ${typeof (Translations)}.`);
         return false;
     }
-    PersonalizeNavigationBar(userInfo);
-    if (Actions && Translations) {
+    if (config.displayNavigationBar === true) {
+        PersonalizeNavigationBar();
+    }
+    if (ActionsJson && Translations) {
         const Loader = document.querySelector('.loader');
         Loader.setAttribute('loading-finished', 'true');
-        if (Actions.DBCallResult) {
+        if (ActionsJson.DBCallResult === true) {
             const mainContainer = document.querySelector('.main');
             let content = '';
-            const DocTypes = Actions.InstanceActions;
+            const DocTypes = ActionsJson.InstanceActions;
+            let currentDocumentType = '';
+            const lang = trans[config.language];
             for (let i = 0; i < DocTypes.length; i++) {
-                let DetailsClass = 'task__details';
-                if (i === DocTypes.length - 1) {
-                    DetailsClass = 'task__details task__details--noMarginBottom';
-                }
+                const DetailsClass = (DocTypes.length - 1 === i) ? 'task__details task__details--noMarginBottom' : 'task__details';
+                let actionCount = 0;
+                DocTypes[i].Steps.forEach((element) => {
+                    actionCount += element.Actions.length;
+                });
                 let dt = (DocTypes[i].DocumentTypeName ? DocTypes[i].DocumentTypeName : DocTypes[i].DocumentType);
-                if (dt in Descriptions) {
+                if (dt !== currentDocumentType) {
+                    currentDocumentType = dt;
                     content +=
-                        `<details class = "${DetailsClass}" data-doctype = "${dt}">
+                        `<details class = "${DetailsClass}" data-action-count = "${actionCount}" data-step-count = "${DocTypes[i].Steps.length}" data-doctype = "${dt}" ${(config.extendableOpenByDefault === true) ? 'open' : ''}>
                         <summary class = "summary">
                             <div class = "summary__container--1">
                                 <div class = "summary__container--2">
-                                    <h2 class = "title__main title__main--1">${Descriptions[dt]['title']}</h2>
+                                    <h2 class = "title__main title__main--1">${dt}</h2>
+                                    <span class = "summary__taskCount">${lang.taskCount}: <span class = "summary__count">${actionCount}</span></span>
                                 </div>
                                 <div class = "summary__container--3">
                                     <div class="summary__icon"></div>
                                 </div>
                             </div>
                         </summary>`;
-                }
-                else {
                 }
                 let shortData = DocTypes[i].PropertiesToShow;
                 if (typeof shortData === "undefined") {
@@ -235,58 +187,80 @@ async function Init() {
                 }
                 let actsteps = DocTypes[i].Steps;
                 for (let j = 0; j < actsteps.length; j++) {
-                    let desc = actsteps[j].StepName;
-                    content += `
+                    if (config.displayDocumentTypeDescription === true && (dt in lang.documentTypeDescriptions)) {
+                        content += `
                         <div class = "title__container--1">
-                            <p class = "title__main title__main--2">${desc}</p>
-                            <p class = "title__description title__description--1">${Descriptions[dt]['desc']}</p>
+                            <p class = "title__description title__description--1">${lang.documentTypeDescriptions[dt]}</p>
                         </div>
                         `;
+                    }
                     let actions = actsteps[j].Actions;
                     for (let z = 0; z < actions.length; z++) {
                         const Data = DocumentShortData(actions[z], shortData);
-                        let pdfclass = 'invisible';
-                        let cmtclass = 'invisible';
-                        if (actions[z].MasterDocument.Pages && actions[z].MasterDocument.Pages.length > 0) {
-                            pdfclass = 'task__subgrid task__subgrid--button';
+                        content += `<div class = "task__container" data-masterdocumentid = "${actions[z].MasterDocumentId}">
+                            <div class = "task__titleContainer">
+                                <div class = "task__title">
+                                    <span class = "title__subtitle">${lang.docTitle}</span>
+                                    <p class = "title__taskPropertyValue title__taskPropertyValue--2">${actions[z].MasterDocumentId}</p>
+                                </div>
+                                <div class = "task__image">
+                                    ${(config.displayIcons === true) ? ((dt in config.iconCodes) ? config.iconCodes[dt] : '<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path fill="currentColor" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>') : ''}
+                                </div>
+                            </div>`;
+                        if (new Date().getTime() >= new Date(actions[z].PlannedEndDate).getTime()) {
+                            content += `<div class = "task__title">
+                                <span class = "title__subtitle">${(lang.noticeCustomSubtitle) ? lang.noticeCustomSubtitle : 'Deadline'}</span>
+                                <div class = "task__title  task__title--warning">
+                                    <img src = "assets/img/icons/warning-signal.svg" class = "task__warningImage">
+                                    <span class = "task__text--danger">${(lang.noticeExpiredCustomText !== '') ? `${lang.noticeExpiredCustomText}` : 'Deadline was missed'}</span>
+                                </div>
+                            </div>`;
                         }
-                        if (actions[z].MasterDocument.Comments && actions[z].MasterDocument.Comments.length > 0) {
-                            cmtclass = 'task__subgrid task__subgrid--button';
+                        else if ((new Date(actions[z].PlannedEndDate).getTime() - new Date().getTime()) <= (86400000 * config.daysUntilWarningDisplays)) {
+                            content += `<div class = "task__title">
+                                <span class = "title__subtitle">${(lang.noticeCustomSubtitle !== '') ? lang.noticeCustomSubtitle : 'Deadline'}</span>
+                                <div class = "task__title  task__title--warning">
+                                    <img src = "assets/img/icons/warningsign.svg" class = "task__warningImage">
+                                    <span class = "task__text--warning">${((lang.noticeExpiredCustomText !== '') ? lang.noticeTimeLeftWarningCustomText : 'Notice: Remaining') + ' ' + timeRemaining(actions[z].PlannedEndDate)}</span>
+                                </div>
+                            </div>`;
                         }
-                        content += `
-                            <div class = "task__container">
-                                <div class = "task__titleContainer">
-                                    <div class = "task__title">
-                                        <span class = "title__subtitle">Naslov dokumenta</span>
-                                        <p class = "title__taskPropertyValue title__taskPropertyValue--2">${actions[z].MasterDocumentId}</p>
-                                    </div>
-                                    <div class = "task__image">
-                                        ${Descriptions[dt]['img']}
-                                    </div>
+                        else {
+                            content += `<div class = "task__title">
+                                <span class = "title__subtitle">${(lang.noticeCustomSubtitle) ? lang.noticeCustomSubtitle : 'Deadline'}</span>
+                                <div class = "task__title  task__title--warning">
+                                    <img src = "assets/img/icons/checksign.svg" class = "task__warningImage">
+                                    <span class = "task__text--accept">${((lang.noticeTimeLeftCustomText !== '') ? lang.noticeTimeLeftCustomText : 'Remaining') + ' ' + timeRemaining(actions[z].PlannedEndDate)}</span>
                                 </div>
-                                <div class = "task__grid task__grid--1">
-                                    ${Data}
-                                </div>
-                                <div class = "task__grid task__grid--1">
-                                    <div class = "task__subgrid actions">
-                                        <span class = "title__subtitle">Potrdi</span>
-                                        <button class = "button__action button__action--green" data-action = "confirm" data-actionID = "${actions[z].WorkflowActionId}">Potrdi</button>
-                                    </div>
-                                    <div class = "task__subgrid actions">
-                                        <span class = "title__subtitle">Zavrni</span>
-                                        <button class = "button__action button__action--red" data-action = "deny" data-actionID = "${actions[z].WorkflowActionId}">Zavrni</button>
-                                    </div>
-                                    <div class = "${cmtclass}">
-                                        <span class = "title__subtitle">Komentarji</span>
-                                        <button class = "button__action button__action--blue" data-action = "comments" data-actionID = "${actions[z].WorkflowActionId}">Komentarji</button>
-                                    </div>
-                                    <div class = "${pdfclass}">
-                                        <span class = "title__subtitle">Predogled</span>
-                                        <button class = "button__action button__action--purple" data-action = "info" data-actionID = "${actions[z].WorkflowActionId}">Prikaži PDF</button>
-                                    </div>
-                                </div>
+                            </div>`;
+                        }
+                        content += `<div class = "task__grid task__grid--1">
+                                ${Data[0]}
                             </div>
-                        `;
+                            <div class = "task__grid task__grid--1">
+                                <div class = "task__subgrid actions">
+                                    <span class = "title__subtitle">${(lang.buttonCustomSubtitle['Confirm'] !== '') ? lang.buttonCustomSubtitle['Confirm'] : 'Approve'}</span>
+                                    <button class = "button__action button__action--green" data-stepname = "${actsteps[j].StepName}" data-dt = "${dt}" ${(config.buttonCustomColor['Confirm'] !== '') ? `style="background-color:${config.buttonCustomColor['Confirm']}"` : ''} data-action = "confirm" data-actionID = "${actions[z].MasterDocumentId}">${(lang.buttonCustomLabel['Confirm'] !== '') ? lang.buttonCustomLabel['Confirm'] : 'Confirm'}</button>
+                                </div>
+                                <div class = "task__subgrid actions">
+                                    <span class = "title__subtitle">${(lang.buttonCustomSubtitle['Reject'] !== '') ? lang.buttonCustomSubtitle['Reject'] : 'Reject'}</span>
+                                    <button class = "button__action button__action--red" data-stepname = "${actsteps[j].StepName}" data-dt = "${dt}" ${(config.buttonCustomColor['Reject'] !== '') ? `style="background-color:${config.buttonCustomColor['Reject']}"` : ''} data-action = "reject" data-actionID = "${actions[z].MasterDocumentId}">${(lang.buttonCustomLabel['Reject'] !== '') ? lang.buttonCustomLabel['Reject'] : 'Reject'}</button>
+                                </div>`;
+                        content += (actions[z].MasterDocument.Comments && actions[z].MasterDocument.Comments.length > 0) ? `
+                                <div class = "task__subgrid task__subgrid--button">
+                                    <span class = "title__subtitle">${(lang.buttonCustomSubtitle['Comments'] !== '') ? lang.buttonCustomSubtitle['Comments'] : 'View comments'}</span>
+                                    <button class = "button__action button__action--blue" data-stepname = "${actsteps[j].StepName}" data-dt = "${dt}" ${(config.buttonCustomColor['Comments'] !== '') ? `style="background-color:${config.buttonCustomColor['Comments']}"` : ''} data-action = "comments" data-actionID = "${actions[z].MasterDocumentId}">${(lang.buttonCustomLabel['Comments'] !== '') ? lang.buttonCustomLabel['Comments'] : 'View comments'}</button>
+                                </div>` : '';
+                        let documentId = actions[z].MasterDocument.Properties.find((el) => el.PropertyName === '_DocumentId').Value;
+                        let pageNo = ('Pages' in actions[z].MasterDocument) ? actions[z].MasterDocument.Pages[0].PageNo : null;
+                        content += (actions[z].MasterDocument.Pages && actions[z].MasterDocument.Pages.length > 0) ?
+                            `<div class = "task__subgrid task__subgrid--button">
+                                <span class = "title__subtitle">${(lang.buttonCustomSubtitle['View'] !== '') ? lang.buttonCustomSubtitle['View'] : 'Attachments'}</span>
+                                <button class = "button__action button__action--purple" data-documentid = "${documentId}" data-pageno = "${(pageNo !== null) ? pageNo : ''}" ${(config.buttonCustomColor['View'] !== '') ? `style="background-color:${config.buttonCustomColor['View']}"` : ''} data-action = "view">${(lang.buttonCustomLabel['View'] !== '') ? lang.buttonCustomLabel['View'] : 'View item'}</button>
+                            </div>` : '';
+                        content += `
+                            </div>
+                        </div>`;
                     }
                 }
                 content += '</details>';
@@ -295,7 +269,7 @@ async function Init() {
             return true;
         }
         else {
-            console.error(Actions.ErrorMessage);
+            console.error(ActionsJson.ErrorMessage);
             return false;
         }
     }
@@ -303,102 +277,277 @@ async function Init() {
         return false;
     }
 }
-async function AttachEventHandlers() {
-    if (await Init()) {
+async function Init() {
+    if (await constructBody()) {
         const PopupCloseButton = document.querySelector('.popup__close');
         PopupCloseButton.addEventListener('click', () => {
             Popup();
         });
-        const DataAttributes = ['confirm', 'deny', 'comments', 'info'];
+        const DataAttributes = ['confirm', 'reject', 'comments', 'view'];
         DataAttributes.forEach(element => {
             const Elements = document.querySelectorAll(`[data-action='${element}']`);
             Elements.forEach(el => {
                 const Action = el.getAttribute('data-action');
-                const ActionID = el.getAttribute('data-actionid');
-                switch (Action) {
-                    case 'confirm':
-                        el.addEventListener('click', () => {
-                            Popup({
-                                Action: Action,
-                                ActionID: ActionID,
-                                Comments: [
-                                    {
-                                        OwnerID: '',
-                                        OwnerName: '',
-                                        CommentTime: '',
-                                        Comment: ''
-                                    }
-                                ]
+                if (Action === 'confirm' || Action === 'reject' || Action === 'comments') {
+                    const ActionID = el.getAttribute('data-actionid');
+                    const documentType = el.getAttribute('data-dt');
+                    const stepName = el.getAttribute('data-stepname');
+                    el.addEventListener('click', () => {
+                        Popup({ Action: Action, ActionID: parseInt(ActionID), documentType: documentType, stepName: stepName });
+                    });
+                }
+                else {
+                    const documentId = el.getAttribute('data-documentid');
+                    const pageNo = el.getAttribute('');
+                    el.addEventListener("click", async () => {
+                        const nonEncodedExtensions = ['.xml', '.txt'];
+                        const response = await requestBlob({ DocumentId: parseInt(documentId), PageNo: parseInt(pageNo) });
+                        const fileExtension = response.Documents.Pages.DataType;
+                        const data = (!(fileExtension in nonEncodedExtensions)) ? window.atob(response.Documents.Pages.PageData) : response.Documents.Pages.PageData;
+                        showFile(data, fileExtension);
+                        function showFile(blob, fileExtension) {
+                            const newBlob = new Blob([blob], {
+                                type: `application/${fileExtension.replace('.', '')}`
                             });
-                        });
-                        break;
-                    case 'deny':
-                        el.addEventListener('click', () => {
-                            Popup({
-                                Action: Action,
-                                ActionID: ActionID,
-                                Comments: [
-                                    {
-                                        OwnerID: '',
-                                        OwnerName: '',
-                                        CommentTime: '',
-                                        Comment: ''
-                                    }
-                                ]
-                            });
-                        });
-                        break;
-                    case 'comments':
-                        el.addEventListener('click', () => {
-                            Popup({
-                                Action: Action,
-                                ActionID: ActionID,
-                                Comments: [
-                                    {
-                                        OwnerID: '',
-                                        OwnerName: '',
-                                        CommentTime: '',
-                                        Comment: ''
-                                    }
-                                ]
-                            });
-                        });
-                        break;
-                    case 'info':
-                        el.addEventListener("click", () => {
-                            fetch(`DMSDataService.svc/getdocument?documentid=${ActionID}&positionlevel=0&includetasks=false`)
-                                .then();
-                        });
-                        break;
+                            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                                window.navigator.msSaveOrOpenBlob(newBlob);
+                                return;
+                            }
+                            const data = window.URL.createObjectURL(newBlob);
+                            const link = document.createElement('a');
+                            link.href = data;
+                            link.download = "file.pdf";
+                            link.click();
+                            setTimeout(() => {
+                                window.URL.revokeObjectURL(data);
+                            }, 100);
+                        }
+                    });
                 }
             });
+            return true;
         });
     }
     else {
         console.error('Cannot initiate page construction.');
+        return false;
     }
 }
-const Popup = (PopupSettings = {}) => {
+function Popup(PopupSettings = { Action: null, ActionID: null, documentType: null, stepName: null }) {
+    const commentContainer = document.getElementById('comment-container');
+    const lang = trans[config.language];
+    const inputContainer = document.getElementsByClassName('popup__inputContainer')[0];
+    const buttonContainer = document.querySelector('.popup__buttonContainer');
+    darkenAndPreventScroll();
+    commentContainer.innerHTML = '';
+    inputContainer.innerHTML = '';
+    buttonContainer.innerHTML = '';
+    if (PopupSettings.Action !== null && PopupSettings.ActionID !== null && PopupSettings.documentType !== null && PopupSettings.stepName !== null) {
+        const Action = PopupSettings.Action;
+        const ActionID = PopupSettings.ActionID;
+        const documentType = PopupSettings.documentType;
+        const stepName = PopupSettings.stepName;
+        const PopupTitle = document.getElementById('popup-title');
+        const popupSubtitle = document.getElementById('popup-subtitle');
+        if (PopupTitle) {
+            PopupTitle.innerHTML = ActionID.toString();
+        }
+        if (popupSubtitle) {
+            popupSubtitle.innerHTML = lang.docTitle;
+        }
+        const taskProperties = ActionsJson.InstanceActions.find((el) => (el.DocumentType === documentType || el.DocumentTypeName === documentType)).Steps
+            .find((el) => el.StepName == stepName).Actions
+            .find((a) => a.MasterDocumentId == ActionID).MasterDocument;
+        const workflowActionId = ActionsJson.InstanceActions.find((el) => (el.DocumentType === documentType || el.DocumentTypeName === documentType)).Steps
+            .find((el) => el.StepName == stepName).Actions
+            .find((el) => el.MasterDocumentId == ActionID).WorkflowActionId;
+        commentContainer.innerHTML = displayPopupComments(('Comments' in taskProperties) ? taskProperties.Comments : []);
+        if (Action === 'confirm') {
+            buttonContainer.innerHTML = `<button id = "confirm-button" class = "button__action button__action--green" ${(config.buttonCustomColor['Confirm'] !== '') ? `style="background-color:${config.buttonCustomColor['Confirm']}"` : ''}>${(lang.buttonCustomLabel['Confirm'] !== '') ? lang.buttonCustomLabel['Confirm'] : 'Confirm'}</button>`;
+            inputContainer.innerHTML = `<span class = "title__subtitle" id = "popup-textarea-subtitle">${lang.textarea.confirmSubtitleText}</span><textarea placeholder = "${lang.textarea.confirmPlaceholderText}" class = "popup__textarea popup__textarea--green" id = "popup-textarea" value = ""></textarea>`;
+            inputContainer.style.display = 'flex';
+            const btn = document.getElementById('confirm-button');
+            const textarea = document.getElementById('popup-textarea');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    if (sendData({ WorkflowActionId: workflowActionId, ActionResult: 'Commit', Comment: textarea.value })) {
+                        closeAndRemove(ActionID);
+                    }
+                });
+            }
+        }
+        else if (Action === 'reject') {
+            buttonContainer.innerHTML = `<button disabled id = "confirm-button" class = "button__action button__action--red" ${(config.buttonCustomColor['Reject'] !== '') ? `style="background-color:${config.buttonCustomColor['Reject']}"` : ''}>${(lang.buttonCustomLabel['Reject'] !== '') ? lang.buttonCustomLabel['Reject'] : 'Reject'}</button>`;
+            inputContainer.innerHTML = `<span class = "title__subtitle" id = "popup-textarea-subtitle">${lang.textarea.rejectSubtitleText}</span><textarea placeholder = "${lang.textarea.rejectPlaceholderText}" class = "popup__textarea popup__textarea--red" id = "popup-textarea" value = ""></textarea>`;
+            inputContainer.style.display = 'flex';
+            const btn = document.getElementById('confirm-button');
+            const textarea = document.getElementById('popup-textarea');
+            if (textarea) {
+                textarea.addEventListener('keyup', () => {
+                    if (textarea.value.length > 0) {
+                        btn.removeAttribute('disabled');
+                        textarea.style.borderColor = 'var(--color-green-3)';
+                    }
+                    else {
+                        btn.setAttribute('disabled', "true");
+                        textarea.style.borderColor = "var(--color-red-1)";
+                    }
+                });
+            }
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    if (sendData({ WorkflowActionId: workflowActionId, ActionResult: 'Commit', Comment: textarea.value })) {
+                        closeAndRemove(ActionID);
+                    }
+                });
+            }
+        }
+        else if (Action === 'comments') {
+        }
+    }
+}
+async function sendData(message) {
+    if (message.Comment == '') {
+        delete message.Comment;
+    }
+    const response = await (await fetch(config.requestPath, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+    })).json();
+    return response.DBCallResult;
+}
+async function requestBlob(obj) {
+    const response = await (await fetch(`${config.blobPath}?documentid=${obj.DocumentId}&pageno=${obj.PageNo}`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })).json();
+    return response;
+}
+function darkenAndPreventScroll() {
     const Popup = document.querySelector('.popup');
     const Main = document.getElementsByTagName('main')[0];
     const Nav = document.querySelector('.navigation');
     const HTML = document.getElementsByTagName('html')[0];
+    const footer = document.getElementsByClassName('footer')[0];
+    const copyright = document.getElementsByClassName('footer__copyright')[0];
     const WidescreenContainer = document.querySelector('.widescreenSmallContainer');
     WidescreenContainer.classList.contains('prevent-scroll') ? WidescreenContainer.classList.remove('prevent-scroll') : WidescreenContainer.classList.add('prevent-scroll');
     HTML.classList.contains('prevent-scroll') ? HTML.classList.remove('prevent-scroll') : HTML.classList.add('prevent-scroll');
     Nav.classList.contains('darken-blur') ? Nav.classList.remove('darken-blur') : Nav.classList.add('darken-blur');
     Main.classList.contains('darken-blur') ? Main.classList.remove('darken-blur') : Main.classList.add('darken-blur');
+    footer.classList.contains('darken-blur') ? footer.classList.remove('darken-blur') : footer.classList.add('darken-blur');
+    copyright.classList.contains('darken-blur') ? copyright.classList.remove('darken-blur') : copyright.classList.add('darken-blur');
     Popup.setAttribute('data-open', (Popup.getAttribute('data-open') === 'closed') ? 'open' : 'closed');
-    if (Object.entries(PopupSettings).length !== 0) {
-        const Action = PopupSettings.Action;
-        const ActionID = PopupSettings.ActionID;
-        const PopupTitle = document.getElementById('popup-title');
-        if (PopupTitle) {
-            PopupTitle.innerHTML = ActionID;
-        }
-        const CommentRequired = PopupSettings.CommentRequired;
+}
+function niceTime(date) {
+    return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
+}
+function timeRemaining(plannedEndDate) {
+    const now = new Date().getTime();
+    const endDate = new Date(plannedEndDate).getTime();
+    if (endDate <= now) {
+        return '';
     }
-};
+    let timeDifference = (endDate - now) / 1000;
+    const days = Math.floor(timeDifference / 86400);
+    timeDifference -= days * 86400;
+    const hours = Math.floor(timeDifference / 3600) % 24;
+    timeDifference -= hours * 3600;
+    const minutes = Math.floor(timeDifference / 60) % 60;
+    timeDifference -= minutes * 60;
+    return `${(days) ? days + 'd' : ''} ${(hours) ? hours + 'd' : ''}h ${minutes}m`;
+}
+function closeAndRemove(actionId) {
+    Popup();
+    const elementToRemove = document.querySelector(`[data-masterdocumentid="${actionId}"]`);
+    if (elementToRemove) {
+        const parent = elementToRemove.closest('.task__details');
+        if (parent) {
+            let numberOfParentChildren = parent.childElementCount;
+            const titleContainer = parent.querySelector('.title__container--1') || null;
+            if (titleContainer !== null) {
+                numberOfParentChildren -= 3;
+            }
+            else {
+                numberOfParentChildren -= 2;
+            }
+            if (numberOfParentChildren <= 0) {
+                parent.remove();
+            }
+            else {
+                const countSpan = parent.querySelector('.summary__count');
+                parent.setAttribute('data-action-count', numberOfParentChildren.toString());
+                if (countSpan) {
+                    countSpan.innerHTML = numberOfParentChildren.toString();
+                }
+            }
+        }
+        elementToRemove.remove();
+    }
+}
+function displayPopupComments(arrayOfCommentObjects = []) {
+    const lang = trans[config.language];
+    let styledComments = '';
+    if (arrayOfCommentObjects.length === 0) {
+        return `                        
+            <div class = "popup__commentMeta">
+                <div class = "popup__commentMeta--col">
+                <span class = "title__subtitle">
+                    ${lang.comments.comment}
+
+                </span>
+                <p class = "popup__text popup__text--comment">
+                    ${lang.comments.noComments}
+                </p>
+            </div>
+        </div>`;
+    }
+    arrayOfCommentObjects.forEach((el) => {
+        styledComments += `<div class = "popup__commentMeta">
+            <div class = "popup__commentMeta--row">
+                <div class = "popup__commentMeta--col">
+                    <span class = "title__subtitle">
+                        ${lang.comments.author}
+                    </span>
+                    <p class = "popup__text popup__text--author">
+                        ${el.Owner}
+                    </p>
+                </div>
+                <div class = "popup__commentMeta--col" style = "flex:1;">
+                    <span class = "title__subtitle">
+                        ${lang.comments.date}
+
+                    </span>
+                    <p class = "popup__text popup__text--date">
+                        ${niceTime(new Date(el.CreationDate))}
+                    </p>
+                </div>
+            </div>
+            <div class = "popup__commentMeta--col">
+                <span class = "title__subtitle">
+                    ${lang.comments.comment}
+                </span>
+                <p class = "popup__text popup__text--comment">
+                    ${el.Comment}
+                </p>
+            </div>
+        </div>`;
+    });
+    return styledComments;
+}
 (function () {
-    AttachEventHandlers();
+    Init();
+    if (config.displayFooter === true) {
+        constructFooter();
+    }
+    if (config.displayCopyrightBar === true) {
+        constructCopyright();
+    }
 })();

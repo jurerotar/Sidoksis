@@ -8,6 +8,9 @@
     background-color: var(--color-dark-1);
     position: relative;
     overflow-x: hidden;
+    @media only screen and (max-width: 450px) {
+        min-height: unset;
+    }
     /**
     Scrollbar
     */
@@ -113,12 +116,49 @@
     }
     &__titleContainer {
         display: flex;
-        margin-bottom: 1.5rem
+        margin-bottom: 1rem
     }
     &__title {
         display: flex;
         flex: 5;
         flex-direction: column;
+        &--warning {
+            flex-direction: row;
+            align-items: center;
+            padding: 5px 0;
+            //border: 2px solid var(--color-yellow-1);
+            border-radius: 10px;
+            //background-color: rgba(255, 255, 0, 0.3);
+            margin-bottom: 1rem;
+            max-width: 250px;
+        }
+    }
+    &__warningImage, &__checkImage {
+        max-height: 20px;
+        margin-right: 5px
+    }
+    &__text {
+        &--warning {
+            color: var(--color-yellow-1);
+            margin-left: 2px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            font-size: 1.3rem;
+        }
+        &--accept {
+            color: var(--color-green-3);
+            margin-left: 2px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            font-size: 1.3rem;
+        }
+        &--danger {
+            color: var(--color-red-1);
+            margin-left: 2px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            font-size: 1.3rem;
+        }
     }
     &__image {
         display: flex;
@@ -184,6 +224,10 @@
           bottom:24px /2 - 2px/2;
         }
     }
+    &__taskCount {
+        color: white;
+        font-size: 1.3rem;
+    }
 }
 
 .image {
@@ -235,6 +279,7 @@
         color: var(--color-light-1);
         &--1 {
             font-size: 2.4rem;
+            margin: 0;
         }
         &--2 {
             font-size: 2rem;
@@ -324,12 +369,14 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-dark-2);
+    transition: filter var(--transition-2);
     &__copyright {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: var(--padding-default) 1rem;
         background-color: darken(#37404A, 5%);
+        transition: filter var(--transition-2);
     }
     &__details {
         padding: var(--padding-default);
@@ -390,13 +437,15 @@ Right side image
 }
 
 .popup {
+    max-height: calc(100vh - 2 * var(--padding-default));
     position: fixed;
+    overflow: auto;
     @media only screen and (min-width: 767px) {
         max-width: calc(768px - 3rem);
         left: 50%;
         transform: translateX(-50%);
     }
-    height: calc(100vh - 2 * var(--padding-default));
+    height: auto ;//calc(100vh - 2 * var(--padding-default));
     width: calc(100% - 2 * var(--padding-default));
     box-shadow: var(--box-shadow-1);
     top: var(--padding-default);
@@ -409,6 +458,18 @@ Right side image
     will-change: opacity;
     transition: opacity .5s;
     border-radius: 10px;
+    /*
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #293347;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 0 10px 10px 0;
+    }
+    */
     &[data-open=open] {
         pointer-events: auto;
         opacity: 1;
@@ -420,14 +481,14 @@ Right side image
         display: flex;
         flex-direction: column;
         border-radius: 10px;
-        padding: 2rem;
+        //padding: 2rem;
     }
     &__header {
         position: relative;
         display: flex;
         width: 100%;
-        min-height: 5rem;
         flex-direction: column;
+        padding: 1.5rem;
     }
     &__title {
         color: var(--color-light-1);
@@ -441,17 +502,84 @@ Right side image
     }
     &__close {
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 2.5rem;
-        width: 2.5rem;
+        top: 1.5rem;
+        right: 1.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
         &--icon {
             fill: #EE3726;
             width: 100%;
             height: 100%;
         }
     }
+    &__textarea {
+        display: flex;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        font-family: var(--font-1);
+        height: 100px;
+        font-size: 1.3rem;
+        background-color: inherit;
+        color: white;
+        margin-top: .5rem;
+        outline: none;
+        transition: var(--transition-2) border-color;
+        &--red {
+            border-color: var(--color-red-1);
+        }
+        &--green {
+            border-color: var(--color-green-3);
+        }
+    }
+    &__commentMeta {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .5rem;
+        background-color: var(--color-dark-3);
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #293347;
+            border-radius: 10px;
+        }
+        &--row {
+            display: flex;
+            flex-direction: row;
+        }
+        &--col {
+            display: flex;
+            flex-direction: column;
+            flex: 3;
+            padding: 1rem 1.5rem;
+        }
+    }
+    &__text {
+        color: white;
+        &--author {
+            font-size: 1.3rem;
+        }
+        &--date {
+            font-size: 1.3rem;
+        }
+        &--comment {
+            font-size: 1.3rem;
+        }
+    }
+    &__inputContainer {
+        padding: 1.5rem;
+        flex-direction: column;
+    }
+    &__buttonContainer {
+        padding: 0 1.5rem;
+        padding-bottom: 1.5rem;
+    }
 }
+
+
 
 .button {
     &__action {
@@ -466,16 +594,16 @@ Right side image
         margin-top: .5rem;
         border: none;
         color: white;
-        max-width: 25%;
-        @media only screen and (max-width: 350px) {
-            min-width: 80px;
-            max-width: 100px;
+        max-width: 20%;
+        transition: filter var(--transition-2);
+        &:disabled {
+            filter:grayscale(.5);
         }
         &--green {
-            background-color: var(--color-green-2);
+            background-color: rgba(44, 160, 44, 1);
         }
         &--red {
-            background-color: var(--color-red-1);
+            background-color: rgba(238, 55, 38, 1);
         }
         &--blue {
             background-color: var(--color-blue-1);
