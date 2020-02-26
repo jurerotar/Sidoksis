@@ -298,14 +298,15 @@ async function Init() {
                 }
                 else {
                     const documentId = el.getAttribute('data-documentid');
-                    const pageNo = el.getAttribute('');
+                    const pageNo = el.getAttribute('data-pageno');
                     el.addEventListener("click", async () => {
                         const nonEncodedExtensions = ['.xml', '.txt'];
                         const response = await requestBlob({ DocumentId: parseInt(documentId), PageNo: parseInt(pageNo) });
                         const fileExtension = response.Documents.Pages.DataType;
+                        const description = response.Documents.Pages.Description;
                         const data = (!(fileExtension in nonEncodedExtensions)) ? window.atob(response.Documents.Pages.PageData) : response.Documents.Pages.PageData;
-                        showFile(data, fileExtension);
-                        function showFile(blob, fileExtension) {
+                        showFile(data, fileExtension, description);
+                        function showFile(blob, fileExtension, description) {
                             const newBlob = new Blob([blob], {
                                 type: `application/${fileExtension.replace('.', '')}`
                             });
@@ -316,7 +317,7 @@ async function Init() {
                             const data = window.URL.createObjectURL(newBlob);
                             const link = document.createElement('a');
                             link.href = data;
-                            link.download = "file.pdf";
+                            link.download = description + fileExtension;
                             link.click();
                             setTimeout(() => {
                                 window.URL.revokeObjectURL(data);
@@ -462,7 +463,7 @@ function timeRemaining(plannedEndDate) {
     timeDifference -= hours * 3600;
     const minutes = Math.floor(timeDifference / 60) % 60;
     timeDifference -= minutes * 60;
-    return `${(days) ? days + 'd' : ''} ${(hours) ? hours + 'd' : ''}h ${minutes}m`;
+    return `${(days) ? days + 'd' : ''} ${(hours) ? hours + 'h' : ''} ${(minutes) ? minutes + 'm' : ''}`;
 }
 function closeAndRemove(actionId) {
     Popup();

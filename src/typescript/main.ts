@@ -18,10 +18,14 @@ import translations from "./translations.js";
  */
 const trans:any = translations();
 
+
+interface Translations {
+    DisplayName: string
+}
 /**
  *  Fetch translations and save them to the 'Translations' variable
  */
-let Translations:object[];
+let Translations:Translations;
 
 /**
  * Fetches translations file
@@ -37,10 +41,15 @@ async function FetchTranslations() {
     }
 };
 
+interface Actions {
+    DBCallResult: boolean,
+    InstanceActions: any,
+    ErrorMessage: string
+}
 /**
  * Fetch actions and save them to the 'Actions' variable
  */
-let ActionsJson:object[];
+let ActionsJson:Actions;
 
 /**
  * Fetches actions file
@@ -576,7 +585,7 @@ async function Init():Promise<boolean|undefined> {
                  */
                 else {
                     const documentId = el.getAttribute('data-documentid');
-                    const pageNo = el.getAttribute('')
+                    const pageNo = el.getAttribute('data-pageno')
                     el.addEventListener("click", async () => {
                         /**
                          * unencoded extensions
@@ -587,10 +596,11 @@ async function Init():Promise<boolean|undefined> {
                          */
                         const response:any = await requestBlob({DocumentId: parseInt(documentId!), PageNo: parseInt(pageNo!)});
                         const fileExtension = response.Documents.Pages.DataType;
+                        const description = response.Documents.Pages.Description;
                         const data:any = (!(fileExtension in nonEncodedExtensions)) ? window.atob(response.Documents.Pages.PageData) : response.Documents.Pages.PageData;
-                        showFile(data, fileExtension);
+                        showFile(data, fileExtension, description);
 
-                        function showFile(blob:Blob, fileExtension:string) {
+                        function showFile(blob:Blob, fileExtension:string, description:string) {
 
                             const newBlob = new Blob([blob], {
                                 type: `application/${fileExtension.replace('.', '')}`
@@ -608,7 +618,7 @@ async function Init():Promise<boolean|undefined> {
                             const data = window.URL.createObjectURL(newBlob);
                             const link = document.createElement('a');
                             link.href = data;
-                            link.download="file.pdf";
+                            link.download= description + fileExtension;
                             link.click();
                             setTimeout(() => {
                             // For Firefox it is necessary to delay revoking the ObjectURL
@@ -859,7 +869,7 @@ function timeRemaining(plannedEndDate:string):string {
     timeDifference -= hours * 3600;
     const minutes = Math.floor(timeDifference / 60) % 60;
     timeDifference -= minutes * 60;    
-    return `${(days) ? days + 'd' : ''} ${(hours) ? hours + 'd' : ''}h ${minutes}m`;
+    return `${(days) ? days + 'd' : ''} ${(hours) ? hours + 'h' : ''} ${(minutes) ? minutes + 'm' : ''}`;
 }
 
 /**
