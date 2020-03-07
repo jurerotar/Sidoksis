@@ -54,7 +54,7 @@ let ActionsJson:Actions;
 /**
  * Fetches actions file
  */
-async function FetchActions() {
+async function FetchActions():Promise<object|any> {
     try {
         const Actions = await (await fetch(config.actionJsonPath)).json();
         ActionsJson = Actions;
@@ -365,7 +365,7 @@ async function constructBody():Promise<boolean> {
                  *  Shrani spisek lastnosti za prikaz podatkov na posamezni nalogi
                  */
                 let shortData:object = DocTypes[i].PropertiesToShow;
-
+        
                 /**
                  * Če ni definiranih podatkov za prikaz, naredi default
                  */
