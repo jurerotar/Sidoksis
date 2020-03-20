@@ -1,0 +1,49 @@
+{
+  "sl": {
+    "docTitle": "ID dokumenta",
+    "blobTitle": "Naslov dokumenta",
+    "blobExtension": "Vrsta dokumenta",
+    "blobSize": "Velikost",
+    "blobView": "Prika\u017ei",
+    "taskCount": "\u0160tevilo nalog",
+    "comments": {
+      "author": "Avtor",
+      "date": "Datum",
+      "comment": "Komentar",
+      "noComments": "Za nalogo ni komentarjev."
+    },
+    "textarea": {
+      "confirmSubtitleText": "Potrdi",
+      "rejectSubtitleText": "Zavrni (obvezno)",
+      "confirmPlaceholderText": "Vnesite komentar (neobvezno)",
+      "rejectPlaceholderText": "Vnesite razlog zavrnitve (obvezno)"
+    },
+    "footer": [
+      {
+        "title": "Dokumentacija",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eum voluptatibus natus tenetur doloribus assumenda perferendis? Repellat voluptatibus beatae voluptate explicabo similique, ratione illo quas, animi maiores illum recusandae asperiores."
+      }
+    ],
+    "buttonCustomLabel": {
+      "Confirm": "Potrdi",
+      "Reject": "Zavrni",
+      "Comments": "Komentarji",
+      "View": "Priponke",
+      "Opinion": "Drugo mnenje"
+    },
+    "noticeCustomSubtitle": "Rok",
+    "loadingLabel": {
+      "loadingData": "Pridobivam podatke",
+      "buildingApp": "Gradim aplikacijo",
+      "finishing": "Kon\u010dujem"
+    },
+    "responses": {
+      "successTask": "Uspe\u0161no ste zaklju\u010dili nalogo",
+      "errorTask": "Pri\u0161lo je do napake",
+      "successOpinion": "Uspe\u0161no ste zahtevali mnenje",
+      "errorOpinion": "Pri zahtevi je pri\u0161lo do napake",
+      "successConfig": "Podatki posodobljeni uspe\u0161no",
+      "errorConfig": "Podatki niso bili posodobljeni"
+    }
+  }
+}

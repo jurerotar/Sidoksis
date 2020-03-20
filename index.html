@@ -3,16 +3,13 @@
     <head>
         <title>Sidoksis document manager</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-site-verification" content="">
-        <!--Start fav icons (Switch icons with correct ones)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
         <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav/favicon-16x16.png">
         <link rel="manifest" href="assets/img/fav/site.webmanifest">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
-        <!--End fav icons-->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
     <body class = "body">
@@ -23,51 +20,12 @@
                 <div role="presentation"></div>
                 <div role="presentation"></div>
             </div>
-            <p class = "loader__text">Loading data</p>
+            <p class = "loader__text"></p>
         </div>
-        <div class = "widescreenSmallContainer">
-            <nav class = "navigation">
-                <div class = "navigation__sectionContainer">
-                    <p class = "title__companyTitle"></p>
-                </div>
-                <div class = "navigation__userContainer">
-                    <div class = "navigation__imageContainer">
-                    </div>
-                    <div class = "navigation__userAndTitleContainer">
-                        <p class = "title__username"></p>
-                        <p class = "title__userTitle"></p>
-                    </div>
-                </div>
-            </nav>
-            <main class = "main">
-
-            </main>
-            <div class = "popup" role="complementary" data-open = "closed">
-                <div class = "popup__rel">
-                    <div class = "popup__header" role="text">
-                        <div class = "popup__close">
-                            <svg version="1.1" class = "popup__close--icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="414.298px" height="414.299px" viewBox="0 0 414.298 414.299" style="enable-background:new 0 0 414.298 414.299;" xml:space="preserve"><path d="M3.663,410.637c2.441,2.44,5.64,3.661,8.839,3.661c3.199,0,6.398-1.221,8.839-3.661l185.809-185.81l185.81,185.811 c2.44,2.44,5.641,3.661,8.84,3.661c3.198,0,6.397-1.221,8.839-3.661c4.881-4.881,4.881-12.796,0-17.679l-185.811-185.81 l185.811-185.81c4.881-4.882,4.881-12.796,0-17.678c-4.882-4.882-12.796-4.882-17.679,0l-185.81,185.81L21.34,3.663 c-4.882-4.882-12.796-4.882-17.678,0c-4.882,4.881-4.882,12.796,0,17.678l185.81,185.809L3.663,392.959 C-1.219,397.841-1.219,405.756,3.663,410.637z"/></svg>
-                        </div>
-                        <p class = "title__subtitle" id = "popup-subtitle">
-                        </p>
-                        <p class = "popup__title" id = "popup-title">
-                        </p>
-                    </div>
-                    <div class = "popup__commentContainer" id = "comment-container">
-                        
-                    </div>
-                    <div class = "popup__inputContainer">
-                        <span class = "title__subtitle" id = "popup-textarea-subtitle"></span>
-                        <textarea class = "popup__textarea" id = "popup-textarea"></textarea>
-                    </div>
-                    <div class = "popup__buttonContainer">
-
-                    </div>
-                </div>
-            </div>
-            <footer class = "footer">
-            </footer>
-            <div class = "footer__copyright">
+        <div class = "widescreenSmallContainer" id = "mainContainer">
+            <div class = "notification">
+                <img src = "assets/img/icons/times-circle-regular.svg" class = "notification__image">
+                <p class = "notification__text">Uspešno ste zaključili nalogo</p>
             </div>
         </div>
         <script type = "module" src = "assets/scripts/main.js"></script>

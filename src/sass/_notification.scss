@@ -1,0 +1,22 @@
+.notification {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    z-index: 50;
+    padding: 1rem;
+    top: 30px;
+    right: 0;
+    border-radius: var(--border-radius-2) 0 0 var(--border-radius-2);
+    background-color: var(--color-dark-3);
+    transition: transform var(--transition-1);
+    transform: translateX(100%);
+    &__image {
+        max-width: 25px;
+        max-height: 25px;
+    }
+    &__text {
+        color: white;
+        margin-left: 1rem;
+        font-size: 1.4rem;
+    }
+}

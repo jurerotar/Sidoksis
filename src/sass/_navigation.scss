@@ -1,0 +1,74 @@
+.navigation {
+    padding: 0 var(--padding-default);
+    height: 6rem;
+    background-color: var(--color-dark-2);
+    display: flex;
+    flex-direction: row;
+    transition: filter var(--transition-2);
+    &__companyContainer {
+        display: flex;
+        flex: 1;
+        height: 100%;
+        padding: .5rem 0;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__userContainer {
+        max-width: 200px;
+        display: flex;
+        height: 100%;
+        padding: .5rem;
+        align-items: center;
+        background-color: var(--color-dark-4);
+    }
+    &__sectionTitle {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__userAndTitleContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: 1rem;
+    }
+    &__imageContainer {
+        background-position: 50% 50%;
+        background-size: cover;
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+        min-width: 5rem;
+        @media only screen and (max-width: 400px) {
+            height: 4rem;
+            width: 4rem;
+            min-width: 4rem;
+        }
+    }
+    &__companyPhoto {
+        height: 100%;
+        border-radius: 50%;
+        @media only screen and (max-width: 400px) {
+            height: 80%;
+        }
+    }
+    &__companyTitle {
+        color: var(--color-light-1);
+        font-size: 2rem;
+        margin-left: 1rem;
+        max-width: 120px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        @media only screen and (max-width: 400px) {
+            font-size: 1.4rem;
+            margin-left: .5rem;
+            max-width: 120px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
